@@ -1,55 +1,31 @@
-For MUNPANELers, please visit [go/v1-oss-survey-review](https://go.corp.munpanel.com/v1-oss-survey-review).
+# BJMUN Operating System (BJMUN OS)
 
-# MUNPANEL (v1)
+An all-in-one platform for Beijing Model United Nations conferences
 
-An all-in-one platform for Model United Nations
+一个面向北京模联的一体化数字平台
 
-一个面向模拟联合国的一体化平台
+This system was live as NUMPANEL from November 2016 till July 2017. It had served 3 conferences, 170+ registered schools, and 2,000+ users, with 500+ maximum DAU (daily active users), 235,000+ total visits, and 490,000+ CNY cash flow. For various reasons, however, BJMUN had canceled the contract with MUNPANEL, leaded MUNPANEL to stop its service and maintenance.
 
-This system was live from November 2016 till July 2017. It had served 3 conferences, 170+ registered schools, and 2,000+ users, with 500+ maximum DAU (daily active users), 235,000+ total visits and 490,000+ CNY cash flow.
+该系统曾于 2016 年 11 月至 2017 年 7 月之间，以 MUNPANEL 的名义服务了 3 场模拟联合国会议，共有 170 所注册学校、2000 名注册用户，最高日活跃用户 500 人以上，共计超过 23 万 5 千次访问，现金流达 490,000+ 人民币。然而由于种种原因，在 2017 年 8 月 BJMUN 与 MUNPANEL 解约，MUNPANEL 陷入停止运营与维护的状态。
 
-该系统自 2016 年 11 月至 2017 年 7 月之间，服务了 3 场模拟联合国会议，共有 170+ 注册学校，2000+ 注册用户，最高日活跃用户 500+，共计 235,000+ 次访问，现金流达 490,000 + 人民币。
+However, in the context that the COVID-19 epidemic brings risks of conferences that cannot be held offline，in order to improve BJMUN's level of digitalization, and protect BJMUN's conference and user data safety in legitimization and privacy, BJMUN Association is about to reopen MUNPANEL system and transform it to a digital platform only for BJMUN - BJMUN Operating System, also abbreviated as BJMUN OS.
 
-For more details, please check the 2017 report down below or [vision.md](vision.md).
+然而，在新型冠状病毒（2019 冠状病毒病）疫情导致会议存在不能线下举办风险的背景下，为了进一步提升北京模联会议的数字化水平、保证 BJMUN 的各类数据在国家安全和个人隐私方面的安全性，BJMUN 有意重启 MUNPANEL 项目，并将其转为 BJMUN 专属的数字化平台——BJMUN Operating System（下称 BJMUN OS）。
 
-关于更多详情，请查看下方的 2017 年度报告以及[vision.md (in English)](vision.md)
+The development goal of BJMUN os is to make all the conference procedures and functionalities go online and first-party, in order that all-conference procedures will be able to conduct inside BJMUN OS without any third-party tools, which avoids any data stored in third-party systems and servers. When BJMUN holds offline conferences, the Easychair moderator system, Easydoc file format system, Easyvote voting system, and other online-offline combining systems can still provide a convenient and efficient participation experience for conference attendees.
 
-## Opensourcing
+BJMUN OS 的开发目标为将所有会议流程与功能线上化且第一方化，最终实现所有会议流程均可在 BJMUN OS 内部完成，以避免各种数据存放于第三方系统和服务器中。在 BJMUN 举办线下会议时，BJMUN OS 提供的 Easychair 主持、Easydoc 文件格式化、Easyvote 表决器等线上与线下结合的功能也可以为参会人员提供极大的便利。
 
-At MUNPANEL, we value our community a lot, and open-sourcing is a way we do it. That's why we decided to open-source MUNPANEL v1, the same server code that served 170+ school clubs, 2,000+ users, and 200,000+ page views, and powered BJMUNC 2017, BJMUNSS 2017, and ROMUNC 2017. We are hoping that the source code could provide an insight into how MUNPANEL works below surface, and also inspire those young students, like us, interested in making the world a better place with technology.
+## Specifications
 
-在 MUNPANEL，我们十分重视我们所在的社区，而开源是我们对社区的一种回馈。我们决定开源 MUNPANEL v1，这个服务了170+学校社团，2000+用户和20余万次访问的，驱动了 BJMUNC 2017、BJMUNSS 2017 以及 ROMUNC 2017 的代码。我们希望源代码可以透露一些 MUNPANEL 在底层是如何运作的，并且启迪那些对和我们一样期待着用科技去改变世界的年轻人们。
+BJMUN OS is neither same as [MUNPANEL](https://github.com/munpanel/MUNPANEL_v1) that connects all Model UN conferences, nor the [iPlacard](https://github.com/fengkaijia/iplacard), a digital system for previous IMUNC conferences, that uses singly per conference and discards all data afterward. ...
 
-## 2017 Report
-
-We have also written a report about the past year (2017) at MUNPANEL (yes, we all love numbers!!!), feel free to take a look at https://github.com/munpanel/2017report/blob/master/munpanel2017.pdf (GitHub stars are welcome!!!
-
-我们也整理了一份关于 MUNPANEL 在 2017 年的开发和运营的报告（是的，我们都喜欢数字！），欢迎访问 https://github.com/munpanel/2017report/blob/master/munpanel2017.pdf （也欢迎在GitHub 上 star）
-
-For MUNPANELers: use [go/2017-report](https://go.corp.munpanel.com/2017-report) instead
-
-## Issues
-
-For why MUNPANEL is currently not under maintainance, please visit [MUNPANEL and ROMUN - To SZR (in Chinese)](https://docs.google.com/document/d/1AVrHc3mKUdNqbtbwcsT1UsqGHOYaHSUyFr_J7X81nus/edit) (link inaccessible in Mainland China)
-
-目前 MUNPANEL 不在积极维护的原因请见 [MUNPANEL and ROMUN - To SZR](https://form.chinagdg.org/document/d/1AVrHc3mKUdNqbtbwcsT1UsqGHOYaHSUyFr_J7X81nus/edit?hl=zh_cn) (中国大陆请使用此链接)
-
-Since this is not under active maintatinance, we offer limited support for the source code, and do not offer external documentation as for deploying and configuration.
-
-因此，我们仅对这份源码提供有限的支持，也恕不对外提供部署、配置相关文档。
-
-If you need to contact us, please use Github issues, or email munpanel-oss-support@adamyi.com and support@munpanel.com
-
-如需联系我们，请使用 Github Issues 或 email munpanel-oss-support@adamyi.com 和 support@munpanel.com
-
-For MUNPANLers:
-
-For (technical) issues with MUNPANEL v1, please visit [go/v1-issues](https://go.corp.munpanel.com/v1-issues)
+BJMUN OS 既不同于过往的连结所有会议的 [MUNPANEL](https://github.com/munpanel/MUNPANEL_v1)，也不同于更早爱梦会议专用的一次性使用、会后清库的 [iPlacard](https://github.com/fengkaijia/iplacard)。……
 
 ## Maintainers
 
-* Adam Yi: [GitHub](https://github.com/adamyi) | [Website](https://www.adamyi.com)
 * Zirui Song: [GitHub](https://github.com/CRH380B-6216L)
+* Anonymous developer
 
 ## License
 [AGPLv3](LICENSE)
