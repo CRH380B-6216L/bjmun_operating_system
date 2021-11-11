@@ -54,15 +54,15 @@ To be continued...
 
 ## Programmes
 
-First of all, we will discuss with BJMUN about the advantages and necessities of using first-party management system, instead of bundle of third-party applications, to manage conference and its data, plus recommond BJMUN Assosiation to adopt BJMUN OS as their _self-owned_ management system. Meanwhile, because that MUNPANEL (hereinafter referred to as "former system") was unmaintained for a long time，we have to check all codes, functions and how it works by deploy the former system into our personal computers (as all technical details of our system has been completely forgotten by 4 year passed).
+First of all, we will discuss with BJMUN the advantages and necessities of using a first-party management system, instead of a bundle of third-party applications, to manage conference and its data, plus recommend BJMUN Association to adopt BJMUN OS as their self-owned management system. Meanwhile, because that MUNPANEL (hereinafter referred to as "former system") was unmaintained for a long time，we have to check all codes, functions and how it works by deploying the former system into our personal computers (as all technical details of our system have been completely forgotten by 4 years passed).
 
 首先，我们将向 BJMUN 组织团队宣讲使用第一方系统代替多个第三方应用组合管理会议数据与信息的优势和必要性，并建议 BJMUN 采纳 BJMUN OS 作为北京模联的会议管理系统使用。与此同时，由于 MUNPANEL 项目（下称“原系统”）常年缺乏维护，因此在重启开发前有必要先部署至本地计算机，查看原系统所有的功能并补习该系统的代码和运作方式（四年过去了，关于原系统的技术细节已经被忘得一干二净了）。
 
-Then, we are planning to fully rewrite the UI to adopt the requirements from the BJMUN conferences. In addition to upgrade Laravel to latest version, we will also introduce Vue.js framework to front-end system in order to realize some real-timing functions that is difficult to be realized by PHP alone. We will also test and evaluate all functions inside former system and remove multiple-provider related parts from former system. 
+Then, we are planning to fully rewrite the UI to adopt the requirements from the BJMUN conferences. In addition to upgrading Laravel to the latest version, we will also introduce the Vue.js framework to the front-end system in order to realize some real-timing functions that are difficult to be realized by PHP alone. We will also test and evaluate all functions inside the former system and remove multiple-provider-related parts from the former system. 
 
 之后，我们计划对 UI 进行彻底的改写。在这个过程中，我们除了升级 Laravel 版本之外，还计划向前端系统引入 Vue.js 框架，以便于实现单一 PHP 语言难以实现的实时性功能。另外，我们将对原系统内的各种功能系统进行测试与评估，并剔除原系统内对多主办者支持的相关功能。
 
-Subsystems in further plannings, such as EasyChair moderator helper, EasyFile file formatting, EasyInterlock cross-venue joint management and EasyVote voting machine, will also be complemented, plus some functions didn't achieved by former system.
+Subsystems in further plannings, such as EasyChair moderator helper, EasyFile file formatting, EasyInterlock cross-venue joint management, and EasyVote voting machine, will also be complemented, plus some functions didn't achieve in the former system.
 
 后续我们还将补全规划中的 EasyChair 主持、EasyFile 文件格式化、EasyInterlock 联动控制、EasyVote 表决器等子系统，并完成原系统尚未实现的部分功能。
 
