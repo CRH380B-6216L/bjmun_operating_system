@@ -8,21 +8,51 @@ This system was live as NUMPANEL from November 2016 till July 2017. It had serve
 
 该系统曾于 2016 年 11 月至 2017 年 7 月之间，以 MUNPANEL 的名义服务了 3 场模拟联合国会议，共有 170 所注册学校、2000 名注册用户，最高日活跃用户 500 人以上，共计超过 23 万 5 千次访问，现金流达 490,000+ 人民币。然而由于种种原因，在 2017 年 8 月 BJMUN 与 MUNPANEL 解约，MUNPANEL 陷入停止运营与维护的状态。
 
-However, in the context that the COVID-19 epidemic brings risks of conferences that cannot be held offline，in order to improve BJMUN's level of digitalization, and protect BJMUN's conference and user data safety in legitimization and privacy, BJMUN Association is about to reopen MUNPANEL system and transform it to a digital platform only for BJMUN - BJMUN Operating System, also abbreviated as BJMUN OS.
+However, in the context that the COVID-19 epidemic brings risks of conferences that cannot be held offline, in order to improve BJMUN's level of digitalization, and protect BJMUN's conference and user data safety in legitimization and privacy, BJMUN Association is about to reopen MUNPANEL (hereinafter referred to as "former system") and transform it to a digital platform only for BJMUN - BJMUN Operating System, also referred to as BJMUN OS.
 
-然而，在新型冠状病毒（2019 冠状病毒病）疫情导致会议存在不能线下举办风险的背景下，为了进一步提升北京模联会议的数字化水平、保证 BJMUN 的各类数据在国家安全和个人隐私方面的安全性，BJMUN 有意重启 MUNPANEL 项目，并将其转为 BJMUN 专属的数字化平台——BJMUN Operating System（下称 BJMUN OS）。
+然而，在新型冠状病毒（2019 冠状病毒病）疫情导致会议存在不能线下举办风险的背景下，为了进一步提升北京模联会议的数字化水平、保证 BJMUN 的各类数据在国家安全和个人隐私方面的安全性，BJMUN 有意重启 MUNPANEL 项目（下称“原系统”），并将其转为 BJMUN 专属的数字化平台——BJMUN Operating System（下称 BJMUN OS）。
 
-The development goal of BJMUN os is to make all the conference procedures and functionalities go online and first-party, in order that all-conference procedures will be able to conduct inside BJMUN OS without any third-party tools, which avoids any data stored in third-party systems and servers. When BJMUN holds offline conferences, the EasyChair moderator system, EasyFile file format system, EasyVote voting system, and other online-offline combining systems can still provide a convenient and efficient participation experience for conference attendees.
+The development goal of BJMUN OS is to make all the conference procedures and functionalities go online and first-party, in order that all-conference procedures will be able to conduct inside BJMUN OS without any third-party tools, which avoids any data stored in third-party systems and servers. When BJMUN holds offline conferences, the EasyChair moderator system, EasyFile file format system, EasyVote voting system, and other online-offline combining systems can still provide a convenient and efficient participation experience for conference attendees.
 
 BJMUN OS 的开发目标为将所有会议流程与功能线上化且第一方化，最终实现所有会议流程均可在 BJMUN OS 内部完成，以避免各种数据存放于第三方系统和服务器中。在 BJMUN 举办线下会议时，BJMUN OS 提供的 EasyChair 主持、EasyFile 文件格式化、EasyVote 表决器等线上与线下结合的功能也可以为参会人员提供极大的便利。
 
-## Specifications
+BJMUN OS is neither same as [MUNPANEL](https://github.com/munpanel/MUNPANEL_v1) that connects all Model UN conferences, nor the [iPlacard](https://github.com/fengkaijia/iplacard), a digital system for previous IMUNC conferences, that uses singly per conference and discards all data afterward. Though BJMUN OS does only provide service to BJMUN conferences, all the data and records generated during the conference preparation and on-holding can not only be saved safely and permanently, and also be used again in specific scenarios like registering BJMUN conference again. Furthermore, part of non-sensitive BJMUN data like basic conference data, conference records, final resolution documents can be shown to specific or unspecific users through BJMUN OS, allowing participants to view the past histories of BJMUN or find the sweet memories by accessing BJMUN OS. In other words, BJMUN OS is not only an essential toolkit serving BJMUN participants but also a digital archive library of BJMUN.
 
-BJMUN OS is neither same as [MUNPANEL](https://github.com/munpanel/MUNPANEL_v1) that connects all Model UN conferences, nor the [iPlacard](https://github.com/fengkaijia/iplacard), a digital system for previous IMUNC conferences, that uses singly per conference and discards all data afterward. To be continued...
+BJMUN OS 既不同于过往的连结所有会议的原系统 [MUNPANEL](https://github.com/munpanel/MUNPANEL_v1)，也不同于更早爱梦会议专用的一次性使用、会后清库的 [iPlacard](https://github.com/fengkaijia/iplacard)。尽管 BJMUN OS 仅供北京模联会议使用，但所有在会议筹备和举办期间产生的数据和记录都将被安全地永久保存，并且在某些场合下（例如，代表再次报名参会）还可以重复使用，为使用者提供更便捷的体验。另外，一部分诸如基本信息、会议记录、文件成果的非敏感数据也可以通过 BJMUN OS 向特定或非特定用户展示，参会人员可以通过 BJMUN OS 浏览北京模联过往的足迹或者寻找属于自己的美好记忆。换句话说，BJMUN OS 既是服务北京模联参会人员的便利工具，也是属于北京模联的数字档案馆。
 
-BJMUN OS 既不同于过往的连结所有会议的 [MUNPANEL](https://github.com/munpanel/MUNPANEL_v1)，也不同于更早爱梦会议专用的一次性使用、会后清库的 [iPlacard](https://github.com/fengkaijia/iplacard)。未完待续……
+## Features
 
-## Plannings
+### Current providings
+
+BJMUN OS provides the following functions inherited from the former system:
+
+- Participant registration and management
+- Distribution of academic documents
+- Distribution, handing-in, and markings of academic assignments
+- Participation fee payment and souvenirs pre-order (payment requires third-party API support)
+- Auto-pairing of partner and roommate according to registration info
+- Auto-generation of conference material
+- Dais member recruit and interview
+- Preliminary backstage management, including event viewers and note-taking system
+
+BJMUN OS 现提供继承自原系统的下述功能：
+
+- 参会人员报名与管理
+- 学术资料下发
+- 学术作业下发、上交和评分
+- 参会人员会费缴纳与纪念品预购（缴费部分需要第三方API支持）
+- 搭档和室友根据报名信息自动配对
+- 会议物料自动生成
+- 学术团队招募与面试
+- 初步的后台管理，包括事件查看和笔记
+
+### Future plannings
+
+To be continued...
+
+未完待续…
+
+## Programmes
 
 First of all, we will discuss with BJMUN about the advantages and necessities of using first-party management system, instead of bundle of third-party applications, to manage conference and its data, plus recommond BJMUN Assosiation to adopt BJMUN OS as their _self-owned_ management system. Meanwhile, because that MUNPANEL (hereinafter referred to as "former system") was unmaintained for a long time，we have to check all codes, functions and how it works by deploy the former system into our personal computers (as all technical details of our system has been completely forgotten by 4 year passed).
 
