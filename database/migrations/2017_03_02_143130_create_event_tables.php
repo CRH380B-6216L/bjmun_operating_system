@@ -7,13 +7,15 @@
 * Proprietary and confidential
 *
 * Developed by Adam Yi <xuan@yiad.am>
+*
+* Supervised for BJMUN Opearting System at 2022
 */
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEventtypesTable extends Migration
+class CreateEventTables extends Migration
 {
     /**
      * Run the migrations.
@@ -31,6 +33,16 @@ class CreateEventtypesTable extends Migration
             //$table->timestamps();
             $table->primary('id');
         });
+		
+		Schema::create('events', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('eventtype_id');
+            $table->integer('reg_id')->unsigned();
+            $table->string('content');
+            $table->foreign('reg_id')->references('id')->on('regs')->onDelete('cascade');
+            $table->foreign('eventtype_id')->references('id')->on('eventtypes')->onDelete('no action');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -41,5 +53,6 @@ class CreateEventtypesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('eventtypes');
+        Schema::dropIfExists('events');
     }
 }

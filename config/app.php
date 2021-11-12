@@ -18,7 +18,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'munpanel',
+    'name' => 'BJMUN Operating System',
 
     /*
     |--------------------------------------------------------------------------
@@ -57,7 +57,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://portal.munpanel.com'),
+    'url' => env('APP_URL', 'http://os.bjmun.org'),
 
     /*
     |--------------------------------------------------------------------------

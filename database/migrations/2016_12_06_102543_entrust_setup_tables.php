@@ -7,6 +7,8 @@
 * Proprietary and confidential
 *
 * Developed by Adam Yi <xuan@yiad.am>
+* 
+* Supervised for BJMUN Opearting System at 2022
 */
 
 use Illuminate\Database\Migrations\Migration;
@@ -21,19 +23,18 @@ class EntrustSetupTables extends Migration
      */
     public function up()
     {
-        // Create table for storing roles
+        // Create table for storing roles 设定身份类型
         Schema::create('roles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('conference_id')->unsigned()->nullable();
+            $table->integer('conference_id')->unsigned()->nullable();
             $table->string('name')->unique();
             $table->string('display_name')->nullable();
             $table->string('description')->nullable();
             $table->timestamps();
-            $table->foreign('conference_id')->references('id')->on('conference')
-                ->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('conference_id')->references('id')->on('conferences')->onUpdate('cascade')->onDelete('set null');
         });
 
-        // Create table for associating roles to users (Many-to-Many)
+        // Create table for associating roles to users (Many-to-Many) 设定身份类型信息（以参会身份为单位）
         Schema::create('reg_role', function (Blueprint $table) {
             $table->integer('reg_id')->unsigned();
             $table->integer('role_id')->unsigned();
@@ -46,7 +47,7 @@ class EntrustSetupTables extends Migration
             $table->primary(['reg_id', 'role_id']);
         });
 
-        // Create table for storing permissions
+        // Create table for storing permissions 设定各种系统权限
         Schema::create('permissions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
@@ -55,7 +56,7 @@ class EntrustSetupTables extends Migration
             $table->timestamps();
         });
 
-        // Create table for associating permissions to roles (Many-to-Many)
+        // Create table for associating permissions to roles (Many-to-Many) 设定身份类型所拥有之系统权限
         Schema::create('permission_role', function (Blueprint $table) {
             $table->integer('permission_id')->unsigned();
             $table->integer('role_id')->unsigned();

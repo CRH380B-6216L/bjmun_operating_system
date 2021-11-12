@@ -7,13 +7,15 @@
 * Proprietary and confidential
 *
 * Developed by Adam Yi <xuan@yiad.am>
+* 
+* Supervised for BJMUN Opearting System at 2022
 */
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrdersTable extends Migration
+class CreateShoppingTables extends Migration
 {
     /**
      * Run the migrations.
@@ -22,6 +24,19 @@ class CreateOrdersTable extends Migration
      */
     public function up()
     {
+        Schema::create('goods', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('conference_id')->unsigned()->nullable();
+            $table->string('name');
+            $table->string('image');
+            $table->string('options');
+            $table->boolean('enabled')->default(false);
+            $table->double('price');
+            $table->integer('remains'); //-1 for unlimited
+            $table->timestamps();
+            $table->foreign('conference_id')->references('id')->on('conferences')->onDelete('cascade');
+        });
+        
         Schema::create('orders', function (Blueprint $table) {
             $table->string('id');
             $table->integer('user_id')->unsigned();
@@ -45,6 +60,18 @@ class CreateOrdersTable extends Migration
             $table->foreign('user_id')->references('id')->on('regs')->onDelete('no action');
             $table->foreign('conference_id')->references('id')->on('conferences')->onDelete('no action');
         });
+        
+        Schema::create(config('cart.database.table'), function (Blueprint $table) {
+            $table->string('identifier');
+            $table->string('instance');
+            $table->longText('content');
+            $table->nullableTimestamps();
+            $table->primary(['identifier', 'instance']);
+        });
+		        
+        Schema::table('regs', function (Blueprint $table) {
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('set null');
+        });
     }
 
     /**
@@ -54,6 +81,11 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
+        Schema::table('regs', function (Blueprint $table) {
+            $table->dropForeign('order_id_foreign');
+        });
+        Schema::dropIfExists('goods');
         Schema::dropIfExists('orders');
+        Schema::drop(config('cart.database.table'));
     }
 }

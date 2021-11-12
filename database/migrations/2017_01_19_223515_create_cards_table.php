@@ -7,6 +7,8 @@
 * Proprietary and confidential
 *
 * Developed by Adam Yi <xuan@yiad.am>
+* 
+* Supervised for BJMUN Opearting System at 2022
 */
 
 use Illuminate\Support\Facades\Schema;
@@ -17,6 +19,8 @@ class CreateCardsTable extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * 本表用于生成参会人员胸卡中二维码的随机ID。
      *
      * @return void
      */

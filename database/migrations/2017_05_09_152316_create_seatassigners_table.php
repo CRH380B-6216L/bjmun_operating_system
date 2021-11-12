@@ -7,6 +7,8 @@
  * Proprietary and confidential
  *
  * Developed by Adam Yi <xuan@yiad.am>
+*
+* Supervised for BJMUN Opearting System at 2022
  */
 
 use Illuminate\Support\Facades\Schema;
@@ -18,6 +20,8 @@ class CreateSeatassignersTable extends Migration
     /**
      * Run the migrations.
      *
+     * 本表用于提供席位分配权限。
+     * 
      * @return void
      */
     public function up()

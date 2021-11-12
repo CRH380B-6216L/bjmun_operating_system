@@ -7,6 +7,8 @@
 * Proprietary and confidential
 *
 * Developed by Adam Yi <xuan@yiad.am>
+* 
+* Supervised for BJMUN Opearting System at 2022
 */
 
 use Illuminate\Support\Facades\Schema;
@@ -30,9 +32,9 @@ class CreateUsersTable extends Migration
             //$table->enum('type', ['unregistered', 'ot', 'dais', 'school', 'delegate', 'observer', 'volunteer']);
             $table->string('password');
             $table->string('emailVerificationToken');
-            $table->integer('telVerifications')->default(15);
-            $table->string('google2fa_secret')->nullable();
-            $table->boolean('google2fa_enabled')->default(false);
+            //$table->integer('telVerifications')->default(15); //暂不使用，待资料和人员确定后再开
+            //$table->string('google2fa_secret')->nullable();
+            //$table->boolean('google2fa_enabled')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

@@ -7,6 +7,8 @@
 * Proprietary and confidential
 *
 * Developed by Adam Yi <xuan@yiad.am>
+*
+* Supervised for BJMUN Opearting System at 2022
 */
 
 use Illuminate\Support\Facades\Schema;
