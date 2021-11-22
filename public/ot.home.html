@@ -1,0 +1,412 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="csrf-token" content="VaP9px9BizWROXl1wPtGvZYRI9BnpFhZ9Jh0QPCQ">
+    <title>ROMUNC 2017 | MUNPANEL</title>
+    <link rel="icon" href="https://romun.munpanel.com/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="https://romun.munpanel.com/images/favicon.ico" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="https://romun.munpanel.com/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="https://romun.munpanel.com/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="https://romun.munpanel.com/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://romun.munpanel.com/css/font.css" type="text/css" cache="false" />
+    <link rel="stylesheet" href="https://romun.munpanel.com/css/plugin.css" type="text/css" />
+    <link rel="stylesheet" href="https://romun.munpanel.com/css/app.css" rel="stylesheet" />
+    <link href="js/nestable/nestable.css" rel="stylesheet" type="text/css" cache="false">
+    <link rel="stylesheet" href="https://romun.munpanel.com/css/munpanel.css" type="text/css" />
+    
+    <script>
+    window.Laravel = {"csrfToken":"VaP9px9BizWROXl1wPtGvZYRI9BnpFhZ9Jh0QPCQ"} </script>
+    <!--[if lt IE 9]>
+    <script src="https://romun.munpanel.com/js/ie/respond.min.js" cache="false"></script>
+    <script src="https://romun.munpanel.com/js/ie/html5.js" cache="false"></script>
+    <script src="https://romun.munpanel.com/js/ie/excanvas.js" cache="false"></script>
+    <script src="https://romun.munpanel.com/js/ie/fix.js" cache="false"></script>
+    <![endif]-->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', "UA-88064834-1", 'auto');
+    ga('set', 'userId', 9);
+    ga('send', 'pageview');
+    </script></head><body>
+    <section class="hbox stretch">
+    
+    <aside class="bg-info aside-sm " id="nav">
+    <section class="vbox">
+    <header class="dker nav-bar nav-bar-fixed-top">
+    <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="#nav">
+    <i class="fa fa-bars"></i>
+    </a>
+    <a href="#" class="nav-brand" data-toggle="fullscreen">ROMUN</a>
+    <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-user">
+    <i class="fa fa-comment-o"></i>
+    </a>
+    </header>
+    <section class="scrollable">
+    <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px">
+    
+    <div class="bg-success nav-user hidden-xs pos-rlt">
+    <div class="nav-avatar pos-rlt">
+    <a href="#" class="thumb-sm avatar animated rollIn" data-toggle="dropdown">
+    <img src="https://www.gravatar.com/avatar/5aa1aeca7f4f0f62bafc65ae2baf87ad?d=https://romun.munpanel.com/images/avatar.png&amp;s=320" alt="" class="">
+    <span class="caret caret-white"></span>
+    </a>
+    <ul class="dropdown-menu m-t-sm animated fadeInLeft">
+    <span class="arrow top"></span>
+    
+    <li>
+    <a href="https://romun.munpanel.com/changePwd.modal" data-toggle="ajaxModal">修改密码</a>
+    <a href="https://romun.munpanel.com/help.html">帮助</a>
+    <a href="https://romun.munpanel.com/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">注销</a>
+    </li>
+    </ul>
+    <div class="visible-xs m-t m-b">
+    <a href="#" class="h3">千反田える</a>
+    </div>
+    </div>
+    
+    </div>
+    
+    
+    <nav class="nav-primary hidden-xs">
+    <ul class="nav">
+    <li class="active">
+    <a href="https://romun.munpanel.com/home">
+    <i class="fa fa-home"></i>
+    <span>Home</span>
+    </a>
+    </li>
+    <li class="">
+    <a href="https://romun.munpanel.com/committeeManage">
+    <i class="fa fa-sitemap"></i>
+    <span>Committees Management</span>
+    </a>
+    </li>
+    <li class="">
+    <a href="https://romun.munpanel.com/userManage">
+    <i class="fa fa-users"></i>
+    <span>Users Management</span>
+    </a>
+    </li>
+    <li class="">
+    <a href="https://romun.munpanel.com/schoolManage">
+    <i class="fa fa-university"></i>
+    <span>Schools Management</span>
+    </a>
+    </li>
+    <li class="">
+    <a href="https://romun.munpanel.com/regManage">
+    <i class="fa fa-tasks"></i>
+    <span>Registration Management</span>
+    </a>
+    </li>
+    
+    <li class="">
+    <a href="https://romun.munpanel.com/teamManage">
+    <i class="fa fa-flag"></i>
+    <span>Team Management</span>
+    </a>
+    </li>
+    
+    
+    <li class="">
+    <a href="https://romun.munpanel.com/confConfig">
+    <i class="fa fa-cogs"></i>
+    <span>Conference Settings</span>
+    </a>
+    </li>
+    
+    <li class="">
+    <a href="https://romun.munpanel.com/nationManage">
+    <i class="fa fa-id-badge"></i>
+    <span>Nation Management</span>
+    </a>
+    </li>
+    
+    </ul>
+    </nav>
+    
+    
+    <div class="bg-primary wrapper hidden-vertical animated fadeInUp text-sm">
+    
+    Proudly Powered and Copyrighted by 2016-2017 MUNPANEL. A Product of Console iT.
+    </div>
+    
+    </div>
+    </section>
+    <footer class="footer bg-gradient hidden-xs">
+    <a href="https://romun.munpanel.com/selectIdentityModal" data-toggle="ajaxModal" class="btn btn-sm btn-link m-r-n-xs pull-right">
+    <i class="fa fa-power-off"></i>
+    </a>
+    <a href="#nav" data-toggle="class:nav-vertical" class="btn btn-sm btn-link m-l-n-sm">
+    <i class="fa fa-bars"></i>
+    </a>
+    </footer>
+    </section>
+    </aside>
+    
+    
+    <section id="content">
+    <section class="vbox">
+    <header class="header bg-white b-b">
+        <p>欢迎组织团队成员 千反田える</p>
+        <div class="col-sm-8 pull-right">
+            <div class="clearfix m-t-xs m-b-xs pull-right pull-none-xs">
+                <div class="pull-left">
+                    <div class="pull-left m-r-xs">
+                        <span class="block text-sm">浏览 </span>
+                        <span class="h4">231</span>
+                        <i class="fa fa-level-up text-success"></i>
+                    </div>
+                    <div class="clear">
+                        <div class="sparkline inline m-t-sm" data-type="bar" data-height="20" data-stacked-bar-color="['#afcf6f', '#ddd']" data-bar-spacing="2" data-bar-width="4">5:5,8:4,12:5,10:6,11:7,12:2,8:6</div>
+                    </div>
+                </div>
+                <div class="pull-left m-l-lg">
+                    <div class="pull-left m-r-xs">
+                        <span class="block text-sm">报名 </span>
+                        <span class="h4">115</span>
+                        <i class="fa fa-level-down text-danger"></i>
+                    </div>
+                    <div class="clear">
+                        <div class="sparkline inline m-t-sm" data-type="bar" data-height="20" data-bar-color="#fb6b5b" data-bar-spacing="2" data-bar-width="4">6,5,8,9,6,3,5</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="scrollable wrapper">
+    <div class="row">
+    <div class="col-md-4">
+    <div class="panel">
+    <div class="panel-heading">会议报名情况<span class="pull-right">代表总数: 115</span><button class="btn btn-xs btn-white m-l active" id="nestable-menu" data-toggle="class:show">
+    <i class="fa fa-plus text"></i>
+    <span class="text">全部展开</span>
+    <i class="fa fa-minus text-active"></i>
+    <span class="text-active">全部折叠</span>
+    </button>
+    </div>
+    <div class="panel-body">
+    <div class="dd" id="nestable2">
+        <ol class="dd-list">
+        <li class="dd-item" data-id="10">
+            <div class="dd-handle">危机联动体系<span class="pull-right">定员: 221&emsp;报名人数: 92</span></div>
+            <ol class="dd-list">
+            <li class="dd-item" data-id="10"><div class="dd-handle">泛亚分支<span class="pull-right">定员: 21&emsp;<strong class="text-danger">报名人数: 32</strong></span></div></li>
+            <li class="dd-item" data-id="10"><div class="dd-handle">欧洲分支<span class="pull-right">定员: 31&emsp;报名人数: 26</span></div></li>
+            <li class="dd-item" data-id="10"><div class="dd-handle">东欧分支<span class="pull-right">定员: 14&emsp;报名人数: 8</span></div></li>
+            <li class="dd-item" data-id="10"><div class="dd-handle">中东分支<span class="pull-right">定员: 51&emsp;报名人数: 4</span></div></li>
+            <li class="dd-item" data-id="10"><div class="dd-handle">联合国安理会<span class="pull-right">定员: 34&emsp;报名人数: 13</span></div></li>
+            <li class="dd-item" data-id="10"><div class="dd-handle">美洲分支<span class="pull-right">定员: 15&emsp;报名人数: 2</span></div></li>
+            <li class="dd-item" data-id="10"><div class="dd-handle">舆论媒体 <span class="pull-right">定员: 55&emsp;报名人数: 7</span></div></li>
+            </ol>
+        </li>
+        <li class="dd-item" data-id="10"><div class="dd-handle">東晉縱橫<span class="pull-right">定员: 80&emsp;报名人数: 12</span></div>
+            <ol class="dd-list">
+            <li class="dd-item" data-id="10"><div class="dd-handle">東晉朝廷<span class="pull-right">定员: 40&emsp;报名人数: 0</span></div></li>
+            <li class="dd-item" data-id="10"><div class="dd-handle">桓溫幕府<span class="pull-right">定员: 10&emsp;报名人数: 0</span></div></li>
+            <li class="dd-item" data-id="10"><div class="dd-handle">前燕朝廷<span class="pull-right">定员: 15&emsp;报名人数: 0</span></div></li>
+            <li class="dd-item" data-id="10"><div class="dd-handle">前秦朝廷<span class="pull-right">定员: 15&emsp;报名人数: 0</span></div></li>
+            </ol>
+        </li>
+        <li class="dd-item" data-id="10"><div class="dd-handle">独立委员会组<span class="pull-right">定员: 256&emsp;报名人数: 11</span></div>
+            <ol class="dd-list">
+            <li class="dd-item" data-id="10"><div class="dd-handle">裁军谈判会议<span class="pull-right">定员: 38&emsp;报名人数: 3</span></div></li>
+            <li class="dd-item" data-id="10"><div class="dd-handle">G20 (en)<span class="pull-right">定员: 38&emsp;报名人数: 3</span></div></li>
+            <li class="dd-item" data-id="10"><div class="dd-handle">世界旅游组织<span class="pull-right">定员: 55&emsp;报名人数: 1</span></div></li>
+            <li class="dd-item" data-id="10"><div class="dd-handle">MSC (zh)<span class="pull-right">定员: 55&emsp;报名人数: 1</span></div></li>
+            <li class="dd-item" data-id="10"><div class="dd-handle">GA3 (zh)<span class="pull-right">定员: 70&emsp;报名人数: 3</span></div></li>
+            </ol>
+            </li>
+        <li class="dd-item" data-id="98"><div class="dd-handle">观察员<span class="pull-right">报名人数: 0</span></div></li>
+        <li class="dd-item" data-id="99"><div class="dd-handle">志愿者<span class="pull-right">报名人数: 0</span></div></li>
+        </ol>
+    </div>
+    </div>
+    </div>
+    </div>
+        <div class="col-md-8">
+            <div class="panel">
+                <div class="panel-heading">
+                    待办事项统计 (组委)
+                </div>
+                <div class="panel-body">
+                    <div class="text-center col-sm-3">
+                        <small class="text-muted block">报名待审核</small>
+                        <h4>108</h4>
+                        <div class="inline">
+                            <div class="easypiechart easyPieChart" data-size="100" data-line-width="4" data-percent="1" data-loop="false">
+                                <span class="h3">0</span>%
+                                <div class="easypie-text">已审核</div>
+                                <canvas></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center col-sm-3">
+                        <small class="text-muted block">未安排面试代表</small>
+                        <h4>1</h4>
+                        <div class="inline">
+                            <div class="easypiechart easyPieChart" data-size="100" data-line-width="4" data-percent="0" data-loop="false">
+                                <span class="h3">0</span>%
+                                <div class="easypie-text">已安排</div>
+                                <canvas></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center col-sm-3">
+                        <small class="text-muted block">未选择席位代表</small>
+                        <h4>0</h4>
+                        <div class="inline">
+                            <div class="easypiechart easyPieChart" data-size="100" data-line-width="4" data-percent="0" data-loop="false">
+                                <span class="h3">0</span>%
+                                <div class="easypie-text">已选席位</div>
+                                <canvas></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center col-sm-3">
+                        <small class="text-muted block">未缴费人员</small>
+                        <h4>0</h4>
+                        <div class="inline">
+                            <div class="easypiechart easyPieChart" data-size="100" data-line-width="4" data-percent="0" data-loop="false">
+                                <span class="h3">0</span>%
+                                <div class="easypie-text">已缴费</div>
+                                <canvas></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-heading">
+                    待办事项统计 (面试官)
+                </div>
+                <div class="panel-body">
+                    <div class="text-center col-sm-3">
+                        <small class="text-muted block">未安排面试</small>
+                        <h4>15</h4>
+                        <div class="inline">
+                            <div class="easypiechart easyPieChart" data-size="100" data-line-width="4" data-percent="63" data-loop="false">
+                                <span class="h3">0</span>%
+                                <div class="easypie-text">已安排</div>
+                                <canvas></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center col-sm-3">
+                        <small class="text-muted block">等待面试队列</small>
+                        <h4>20</h4>
+                        <div class="inline">
+                            <div class="easypiechart easyPieChart" data-size="100" data-line-width="4" data-percent="51" data-loop="false">
+                                <span class="h3">0</span>%
+                                <div class="easypie-text">面试完成</div>
+                                <canvas></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center col-sm-3">
+                        <small class="text-muted block">等待分配席位</small>
+                        <h4>6</h4>
+                        <div class="inline">
+                            <div class="easypiechart easyPieChart" data-size="100" data-line-width="4" data-percent="60" data-loop="false">
+                                <span class="h3">0</span>%
+                                <div class="easypie-text">已分配</div>
+                                <canvas></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center col-sm-3">
+                        <small class="text-muted block">未选择席位</small>
+                        <h4>5</h4>
+                        <div class="inline">
+                            <div class="easypiechart easyPieChart" data-size="100" data-line-width="4" data-percent="44" data-loop="false">
+                                <span class="h3">0</span>%
+                                <div class="easypie-text">已选席位</div>
+                                <canvas></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>         
+            <div class="panel">
+                <div class="panel-heading">
+                    待办事项统计 (学术团队申请)
+                </div>
+                <div class="panel-body">
+                    <div class="text-center col-sm-3">
+                        <small class="text-muted block">申请待审核</small>
+                        <h4>8</h4>
+                        <div class="inline">
+                            <div class="easypiechart easyPieChart" data-size="100" data-line-width="4" data-percent="86" data-loop="false">
+                                <span class="h3">0</span>%
+                                <div class="easypie-text">已审核</div>
+                                <canvas></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center col-sm-3">
+                        <small class="text-muted block">未安排面试</small>
+                        <h4>1</h4>
+                        <div class="inline">
+                            <div class="easypiechart easyPieChart" data-size="100" data-line-width="4" data-percent="0" data-loop="false">
+                                <span class="h3">0</span>%
+                                <div class="easypie-text">已安排</div>
+                                <canvas></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center col-sm-3">
+                        <small class="text-muted block">申请待复核</small>
+                        <h4>0</h4>
+                        <div class="inline">
+                            <div class="easypiechart easyPieChart" data-size="100" data-line-width="4" data-percent="0" data-loop="false">
+                                <span class="h3">0</span>%
+                                <div class="easypie-text">已复核</div>
+                                <canvas></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center col-sm-3">
+                        <small class="text-muted block">申请已批准</small>
+                        <h4>0</h4>
+                        <div class="inline">
+                            <div class="easypiechart easyPieChart" data-size="100" data-line-width="4" data-percent="62" data-loop="false">
+                                <span class="h3">0</span>%
+                                <div class="easypie-text">通过率</div>
+                                <canvas></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    </section></section>
+    </section>
+    <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a>
+    </section>
+    <form id="logout-form" action="https://romun.munpanel.com/logout" method="POST" style="display: none;"> <input type="hidden" name="_token" value="VaP9px9BizWROXl1wPtGvZYRI9BnpFhZ9Jh0QPCQ"> </form>
+    <script src="https://romun.munpanel.com/js/jquery.min.js"></script>
+    
+    <script src="https://romun.munpanel.com/js/bootstrap.js"></script>
+    
+    <script src="https://romun.munpanel.com/js/app.js"></script>
+    <script src="https://romun.munpanel.com/js/app.plugin.js"></script>
+    <script src="https://romun.munpanel.com/js/app.data.js"></script>
+    <script src="https://romun.munpanel.com/js/slimscroll/jquery.slimscroll.min.js" cache="false"></script>
+    <script src="js/charts/sparkline/jquery.sparkline.min.js"></script>
+    <script src="js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
+    <script src="https://romun.munpanel.com/js/parsley/parsley.min.js"></script>
+    <script src="https://romun.munpanel.com/js/parsley/parsley.extend.js"></script>
+    <script src="js/sortable/jquery.sortable.js"></script>
+    <script src="js/nestable/jquery.nestable.js" cache="false"></script>
+    <script src="js/nestable/demo.js" cache="false"></script>
+    </body>
+</html>

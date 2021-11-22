@@ -1,0 +1,74 @@
+<head>
+  <meta charset="utf-8" />
+  <title>MUNPANEL</title>
+  <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/font.css" type="text/css" cache="false" />
+  <link rel="stylesheet" href="css/plugin.css" type="text/css" />
+  <link href="js/nestable/nestable.css" rel="stylesheet" type="text/css" cache="false">
+  <link rel="stylesheet" href="css/app.css" type="text/css" />
+  <link rel="stylesheet" href="css/munpanel.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="js/ie/respond.min.js" cache="false"></script>
+    <script src="js/ie/html5.js" cache="false"></script>
+    <script src="js/ie/fix.js" cache="false"></script>
+  <![endif]-->
+</head>
+<section class="scrollable bg-light">
+  <header>
+    <div class="row b-b m-l-none m-r-none lter">
+      <div class="col-sm-4">
+        <h3 class="m-t m-b-xs">团队列表</h3>
+        <p class="block text-muted">已选区域: 北京</p>
+      </div>
+      <div class="col-sm-8">
+        <p>
+          <a href="/" class="btn btn-sm btn-success pull-right" data-toggle="ajaxModal"><i class="fa fa-plus"></i> 新建新团队</a>
+          <a href="/" class="btn btn-sm btn-success pull-right" data-toggle="ajaxModal"><i class="fa fa-plus"></i> 加入新团队</a>
+        </p>
+      </div>
+    </div>
+  </header>
+  <div class="scrollable wrapper w-f">
+    <section class="panel">
+      <div class="table-responsive">
+        <table class="table table-striped m-b-none text-sm" id="team-table">
+          <thead>
+            <tr>
+              <!--th width="20"><input type="checkbox"></th-->
+              <th width="20"></th>
+              <!--th class="th-sortable" data-toggle="class">Project
+                <span class="th-sort">
+                  <i class="fa fa-sort-down text"></i>
+                  <i class="fa fa-sort-up text-active"></i>
+                  <i class="fa fa-sort"></i>
+                </span>
+              </th-->
+              <th width="20">ID</th>
+              <th width="60">类型</th>
+              <th>名称</th>
+              <th width="60">全局管理</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </section>
+  </div>
+  <footer class="footer lter b-t">
+    <div class="row m-t-sm text-center-xs">
+      <div class="col-sm-4">
+        <div class="dataTables_length" id="team-table_length_new"><label>每页 <select name="team-table_length" id="team-length-select"aria-controls="team-table" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> 条记录</label></div>
+      </div>
+      <div class="col-sm-4 text-center">
+        <small class="text-muted inline m-t-sm m-b-sm" id="team-pageinfo"></small>
+      </div>
+      <div class="col-sm-4 text-right text-center-xs">                
+        <ul class="pagination pagination-sm m-t-none m-b-none" id="team-pagnination">
+        </ul>
+      </div>
+    </div>
+  </footer>
+</section>

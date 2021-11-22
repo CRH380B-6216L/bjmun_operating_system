@@ -9,13 +9,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @if (Reg::currentConferenceID() != 0)
-    <title>{{Reg::currentConference()->name}} {{is_object(Reg::current()) && Reg::current()->user->id != Auth::id() ? '(sudo mode)' : ''}} | MUNPANEL{{config('app.debug')?' CONFIDENTIAL':''}}</title>
+    <title>{{Reg::currentConference()->name}} {{is_object(Reg::current()) && Reg::current()->user->id != Auth::id() ? '(sudo mode)' : ''}} | BJMUN{{config('app.debug')?' CONFIDENTIAL':''}}</title>
     @else
-    <title>MUNPANEL{{config('app.debug')?' CONFIDENTIAL':''}}</title>
+    <title>BJMUN{{config('app.debug')?' CONFIDENTIAL':''}}</title>
     @endif
-    <meta name="keywords" content="MUNPANEL,MUN,Model UN,Model United Nations,United Nations,UN,PANEL,模联,模拟联合国">
-    <meta name="copyright" content="Proudly Powered and Copyrighted by {{config('munpanel.copyright_year')}} MUNPANEL.">
-    <meta name="generator" content="MUNPANEL System">
+    <meta name="keywords" content="BJMUN,MUN,Model UN,Model United Nations,United Nations,UN,PANEL,模联,模拟联合国">
+    <meta name="copyright" content="Proudly Powered and Copyrighted by {{config('bjmun.copyright_year')}} BJMUN.">
+    <meta name="generator" content="BJMUN Operating System">
     <meta name="author" content="Adam Yi">
 
 
@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="{{cdn_url('/css/plugin.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{cdn_url('/css/app.css')}}" rel="stylesheet" />
     @stack('css')
-    <link rel="stylesheet" href="{{cdn_url('/css/munpanel.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{cdn_url('/css/bjmun-os.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{mp_url('/css/maia.footer.css')}}" type="text/css" />
 
     <!-- Scripts -->
@@ -56,24 +56,26 @@
 <body>
   <section class="hbox stretch">
     <!-- .aside -->
-    <aside class="bg-info aside-sm @yield('hide_aside')" id="nav">
+    <aside class="aside bg-dark dk @yield('hide_aside')" id="nav">
       <section class="vbox">
         <header class="dker nav-bar nav-bar-fixed-top">
-          <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="#nav">
-            <i class="fa fa-bars"></i>
-          </a>
-          <a href="#" class="nav-brand" data-toggle="fullscreen">{{Reg::currentConference()->shortname}}</a>
-          <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-user">
-            <i class="fa fa-comment-o"></i>
-          </a>
+          <div class="navbar-header nav-bar aside dk">
+            <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-primary">
+              <i class="fa fa-bars"></i>
+            </a>
+            <a href="#" class="nav-brand" data-toggle="fullscreen">BJMUN OS</a>
+            <a class="btn btn-link visible-xs" data-toggle="collapse" data-target=".navbar-collapse">
+              <i class="fa fa-comment-o"></i>
+            </a>
+          </div>
         </header>
         <section class="scrollable">
           <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px">
           <!-- user -->
-          <div class="bg-success nav-user hidden-xs pos-rlt">
+          <!--div class="bg-success nav-user hidden-xs pos-rlt">
             <div class="nav-avatar pos-rlt">
               <a href="#" class="thumb-sm avatar animated rollIn" data-toggle="dropdown">
-                <img src="{{ 'https://www.gravatar.com/avatar/' . md5( strtolower( trim( Auth::check() ? Auth::user()->email : 'support@munpanel.com' ) ) ) . '?d='.mp_url('images/avatar.png').'&s=320' }}" alt="" class="">
+                <img src="{{ 'https://www.gravatar.com/avatar/' . md5( strtolower( trim( Auth::check() ? Auth::user()->email : 'official@bjmun.org' ) ) ) . '?d='.mp_url('images/avatar.png').'&s=320' }}" alt="" class="">
                 <span class="caret caret-white"></span>
                 @if (config('app.debug'))
                 CONFIDENTIAL
@@ -81,7 +83,7 @@
               </a>
               <ul class="dropdown-menu m-t-sm animated fadeInLeft">
               	<span class="arrow top"></span>
-                <!--li>
+                <--li>
                   <a href="#">Settings</a>
                 </li>
                 <li>
@@ -96,7 +98,7 @@
                 <li class="divider"></li>
                 <li>
                   <a href="help.html">Help</a>
-                </li-->
+                </li-- >
                 <li>
                   @if (is_object(Reg::current()))
                   @if (Reg::currentConferenceID() == 0)
@@ -153,15 +155,15 @@
                   </footer>
                 </section>
               </section>
-            </div-->
-          </div>
+            </div>
+          </div-->
           <!-- / user -->
           <!-- nav -->
           <nav class="nav-primary hidden-xs">
             <ul class="nav">
             @if (config('app.debug'))
               <li class="bg-danger @yield('debug_active')">
-                <a href="{{ mp_url('/aboutDebug') }}">
+                <a style="color: #ffffff;" href="{{ mp_url('/aboutDebug') }}">
                   <i class="fa fa-bug"></i>
                   <span>Dev Mode</span>
                 </a>
@@ -175,14 +177,51 @@
                 </a>
               </li>
               @endif
-              @if (Reg::currentConferenceID() != 0)
-              <li>
-                <a href="{{ route('portal') }}">
-                  <i class="fa fa-reply"></i>
-                  <span>Back to Portal</span>
+			  <li class="active">
+                <a href="/index.htm">
+                  <i class="fa fa-home"></i>
+                  <span>Home</span>
                 </a>
               </li>
-              @endif
+              <li>
+                <a href="teams.htm">
+                  <i class="fa fa-university"></i>
+                  <span>School</span>
+                </a>
+              </li>
+              <li>
+                <a href="conferences">
+                  <i class="fa fa-gavel"></i>
+                  <span>Conference</span>
+                </a>
+              </li>
+              <li>
+                <a href="mail.html">
+                  <b class="badge bg-primary pull-right">3</b>
+                  <i class="fa fa-mail-bulk"></i>
+                  <span>Mail</span>
+                </a>
+              </li>
+              <li>
+                <a href="tasks.html">
+                  <i class="fa fa-tasks"></i>
+                  <span>Tasks</span>
+                </a>
+              </li>
+              <li>
+                <a href="notes.html">
+                  <i class="fa fa-book"></i>
+                  <span>Archive</span>
+                </a>
+              </li>
+              <li>
+                <a href="community.html">
+                  <i class="fa fa-comments"></i>
+                  <span>Community</span>
+                </a>
+              </li>
+
+<!--
                 @if (Reg::currentConferenceID() == 0)
                 @include('layouts.portal')
                 @elseif (is_object(Reg::current()) && Reg::current()->type == 'teamadmin')
@@ -195,7 +234,7 @@
                 @include('layouts.interviewer')
                 @else
                 @include('layouts.delegate')
-                @endif
+                @endif-->
                 @if (Reg::currentConferenceID() != 0 && is_object(Reg::current()) && Reg::current()->type != 'teamadmin')
                   @foreach(Auth::user()->regs->where('conference_id', Reg::currentConferenceID())->where('enabled', true) as $reg)
                   @if ($reg->type == 'teamadmin')
@@ -239,9 +278,124 @@
       </section>
     </aside>
     <!-- /.aside -->
-    <!-- .vbox -->
-    <section id="content">
-        @yield('content')
+  <section class="vbox">
+      <header class="header bg-black navbar no-padding">
+        <div class="collapse navbar-collapse no-padding">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-university text-white"></i>
+                <span class="text-white">岐阜县立斐太高等学校</span> <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="buttons.html">岐阜县立斐太高等学校</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a href="gallery.html">查看我的团队...</a>
+                </li>
+                <li>
+                  <a href="gallery.html">查找社团...</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-gavel text-white"></i>
+                <span class="text-white">BJMUNC 2022</span> <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="dashboard.htm">ROMUNC 2017</a>
+                </li>
+                <li>
+                  <a href="dashboard-1.htm">BJMUNSS 2017</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a href="gallery.htm">发现会议...</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-left m-t-sm" role="search">
+            <div class="form-group">
+              <div class="input-group input-s">
+                <input type="text" class="form-control input-sm no-border dk text-white" placeholder="Search">
+                <span class="input-group-btn">
+                  <button type="submit" class="btn btn-sm btn-primary btn-icon"><i class="fa fa-search"></i></button>
+                </span>
+              </div>
+            </div>
+          </form>
+          <ul class="nav navbar-nav navbar-right m-r-none">
+            <!--li class="dropdown">
+              <a href="signin.html" class="dker">
+                登录 
+              </a>
+            </li-->
+            <li class="hidden-xs">
+              <a href="#" class="dropdown-toggle dk" data-toggle="dropdown">
+                <i class="fa fa-bell fa-lg text-white"></i>
+                <span class="badge up bg-danger m-l-n-sm">2</span>
+              </a>
+              <section class="dropdown-menu animated fadeInUp input-s-lg">
+                <section class="panel bg-white">
+                  <header class="panel-heading">
+                    <strong>您有 <span class="count-n">2</span> 条新提醒</strong>
+                  </header>
+                  <div class="list-group">
+                    <a href="#" class="media list-group-item">
+                      <span class="pull-left thumb-sm">
+                        <img src="images/avatar.jpg" alt="John said" class="img-circle">
+                      </span>
+                      <span class="media-body block m-b-none">
+                        ROMUNC 2017 为您分配了新的面试<br>
+                        <small class="text-muted">7 分钟前</small>
+                      </span>
+                    </a>
+                    <a href="#" class="media list-group-item">
+                      <span class="media-body block m-b-none">
+                        欢迎使用 MUNPANEL<br>
+                        <small class="text-muted">15 小时前</small>
+                      </span>
+                    </a>
+                  </div>
+                  <footer class="panel-footer text-sm">
+                    <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
+                    <a href="#">查看全部</a>
+                  </footer>
+                </section>
+              </section>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle aside-sm dker" data-toggle="dropdown">
+                <span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
+                  <img src="images/avatar.jpg">
+                </span>
+                千反田える <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu animated fadeInLeft">
+                <li>
+                  <a href="profile.html">我的资料</a>
+                </li>
+                <li>
+                  <a href="#">设置</a>
+                </li>
+                <li>
+                  <a href="help.html">帮助</a>
+                </li>
+                <li>
+                  <a href="signin.html">退出</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <section class="scrollable bg-light" id="content">
+          @yield('content')
       </section>
       <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a>
     </section>
@@ -278,15 +432,6 @@
   </li><li><a href="../../safetycenter/families/start/">Google Safety Center</a>
   </li><li><a href="../../policies/technologies/product-privacy/">Google Product Privacy Guide</a>
   </li><li><a href="https://privacy.google.com?hl=en">Your privacy, security, and controls</a></li></ul></div></div></div></div></div>--}}
-  <div id="maia-footer-global">
-  <div class="maia-aux">
-  <div style="color:#aaa"><ul>This site is proudly powered by MUNPANEL, who neither created nor endorses this content.</ul></div>
-  <div><div class="maia-right">{{config('munpanel.icp_license')}}</div>
-  <div class="maia-left"><ul>
-  <li><a href="https://www.munpanel.com/">MUNPANEL</a>
-  </li><li><a href="https://mp.weixin.qq.com/s/oqL2cA5dSa6PpwCj1RpSnQ">About MUNPANEL</a>
-  </li><!--li><a href="https://www.munpanel.com/privacy/">Privacy</a>
-  </li><li><a href="https://www.munpanel.com/terms/">Terms</a></li--></ul></div></div></div></div></div>
   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> {{ csrf_field() }} </form>
   <script src="{{cdn_url('/js/jquery.min.js')}}"></script>
   <!-- Bootstrap -->

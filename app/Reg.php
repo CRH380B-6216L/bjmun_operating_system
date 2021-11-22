@@ -165,7 +165,7 @@ class Reg extends Model
         if (!is_null(self::$_currentConference))
             return self::$_currentConference;
         self::$_currentConference = Conference::find(Reg::currentConferenceID());
-        self::$_currentConference->load('options');
+        // self::$_currentConference->load('options');
         return self::$_currentConference;
         return Conference::find(Reg::currentConferenceID());
     }

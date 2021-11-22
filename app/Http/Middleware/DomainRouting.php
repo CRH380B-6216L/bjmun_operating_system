@@ -4,6 +4,8 @@
  * This file is part of MUNPANEL System.
  *
  * Open-sourced under AGPL v3 License.
+ * 
+ * Supervised for BJMUN Opearting System at 2022
  */
 
 namespace App\Http\Middleware;
@@ -33,7 +35,7 @@ class DomainRouting
                 $conference_id = Cache::tags('domains')->get($domain);
                 if (!isset($conference_id))
                 {
-                    $conference_id = DB::table('domains')->where('domain', $domain)->value('conference_id');
+                    $conference_id = 1;
                     if (isset($conference_id))
                     {
                         config(['munpanel.conference_id' => $conference_id]);
@@ -47,7 +49,7 @@ class DomainRouting
                             return redirect(route('landing'));
                     }
                 } else
-                    config(['munpanel.conference_id' => $conference_id]);
+                config(['munpanel.conference_id' => $conference_id]);
             }
         }
         return $next($request);

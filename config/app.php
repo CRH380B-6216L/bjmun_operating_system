@@ -4,6 +4,8 @@
  * This file is part of MUNPANEL System.
  *
  * Open-sourced under AGPL v3 License.
+ *
+ * Supervised for BJMUN Opearting System at 2022
  */
 
 return [

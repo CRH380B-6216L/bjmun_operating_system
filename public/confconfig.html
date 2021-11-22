@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="csrf-token" content="VaP9px9BizWROXl1wPtGvZYRI9BnpFhZ9Jh0QPCQ">
+    <title>ROMUNC 2017 | MUNPANEL</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/font.css" type="text/css" cache="false" />
+    <link rel="stylesheet" href="css/plugin.css" type="text/css" />
+    <link rel="stylesheet" href="css/app.css" rel="stylesheet" />
+    <link href="js/nestable/nestable.css" rel="stylesheet" type="text/css" cache="false">
+    <link rel="stylesheet" href="css/munpanel.css" type="text/css" />
+    
+    <script>
+    window.Laravel = {"csrfToken":"VaP9px9BizWROXl1wPtGvZYRI9BnpFhZ9Jh0QPCQ"} </script>
+    <!--[if lt IE 9]>
+    <script src="js/ie/respond.min.js" cache="false"></script>
+    <script src="js/ie/html5.js" cache="false"></script>
+    <script src="js/ie/excanvas.js" cache="false"></script>
+    <script src="js/ie/fix.js" cache="false"></script>
+    <![endif]-->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', "UA-88064834-1", 'auto');
+    ga('set', 'userId', 9);
+    ga('send', 'pageview');
+    </script></head><body>
+    <section class="hbox stretch">
+    
+    <aside class="bg-info aside-sm " id="nav">
+    <section class="vbox">
+    <header class="dker nav-bar nav-bar-fixed-top">
+    <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="#nav">
+    <i class="fa fa-bars"></i>
+    </a>
+    <a href="#" class="nav-brand" data-toggle="fullscreen">ROMUN</a>
+    <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-user">
+    <i class="fa fa-comment-o"></i>
+    </a>
+    </header>
+    <section class="scrollable">
+    <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px">
+    
+    <div class="bg-success nav-user hidden-xs pos-rlt">
+    <div class="nav-avatar pos-rlt">
+    <a href="#" class="thumb-sm avatar animated rollIn" data-toggle="dropdown">
+    <img src="https://www.gravatar.com/avatar/5aa1aeca7f4f0f62bafc65ae2baf87ad?d=images/avatar.png&amp;s=320" alt="" class="">
+    <span class="caret caret-white"></span>
+    </a>
+    <ul class="dropdown-menu m-t-sm animated fadeInLeft">
+    <span class="arrow top"></span>
+    
+    <li>
+    <a href="changePwd.modal" data-toggle="ajaxModal">修改密码</a>
+    <a href="help.html">帮助</a>
+    <a href="logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">注销</a>
+    </li>
+    </ul>
+    <div class="visible-xs m-t m-b">
+    <a href="#" class="h3">千反田える</a>
+    </div>
+    </div>
+    
+    </div>
+    
+    
+    <nav class="nav-primary hidden-xs">
+    <ul class="nav">
+    <li class="">
+    <a href="home">
+    <i class="fa fa-home"></i>
+    <span>Home</span>
+    </a>
+    </li>
+    <li class="">
+    <a href="committeeManage">
+    <i class="fa fa-sitemap"></i>
+    <span>Committees Management</span>
+    </a>
+    </li>
+    <li class="">
+    <a href="userManage">
+    <i class="fa fa-users"></i>
+    <span>Users Management</span>
+    </a>
+    </li>
+    <li class="">
+    <a href="schoolManage">
+    <i class="fa fa-university"></i>
+    <span>Schools Management</span>
+    </a>
+    </li>
+    <li class="">
+    <a href="regManage">
+    <i class="fa fa-tasks"></i>
+    <span>Registration Management</span>
+    </a>
+    </li>
+    
+    <li class="">
+    <a href="teamManage">
+    <i class="fa fa-flag"></i>
+    <span>Team Management</span>
+    </a>
+    </li>
+    
+    
+    <li class="active">
+    <a href="confConfig">
+    <i class="fa fa-cogs"></i>
+    <span>Conference Settings</span>
+    </a>
+    </li>
+    
+    <li class="">
+    <a href="nationManage">
+    <i class="fa fa-id-badge"></i>
+    <span>Nation Management</span>
+    </a>
+    </li>
+    
+    </ul>
+    </nav>
+    
+    
+    <div class="bg-primary wrapper hidden-vertical animated fadeInUp text-sm">
+    
+    Proudly Powered and Copyrighted by 2016-2017 MUNPANEL. A Product of Console iT.
+    </div>
+    
+    </div>
+    </section>
+    <footer class="footer bg-gradient hidden-xs">
+    <a href="selectIdentityModal" data-toggle="ajaxModal" class="btn btn-sm btn-link m-r-n-xs pull-right">
+    <i class="fa fa-power-off"></i>
+    </a>
+    <a href="#nav" data-toggle="class:nav-vertical" class="btn btn-sm btn-link m-l-n-sm">
+    <i class="fa fa-bars"></i>
+    </a>
+    </footer>
+    </section>
+    </aside>
+    
+    
+    <section id="content">
+    <section class="vbox">
+    <header class="header bg-white b-b">
+        <p>ROMUNC 2017 会议设置</p>        
+    </header>
+    <section class="scrollable wrapper">
+    <section class="panel">
+                <header class="panel-heading font-bold">
+                  基本信息
+                </header>
+                <div class="panel-body">
+                  <form class="form-horizontal" method="get">
+                    <div class="form-group">
+                      <label class="col-lg-2 control-label">会议全称</label>
+                      <div class="col-lg-10">
+                        <input disabled="" class="form-control" type="text" placeholder="Disabled input here...">
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">会议简称</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="text">                        
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">域名简写</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="text">
+                        <span class="help-block m-b-none">此简写会被用于系统域名，并显示在系统界面的左上角。</span>
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">举办日期</label>
+                      <div class="col-sm-5">
+                        <span class="help-block m-b-none">自</span>
+                        <input class="input-sm input-s datepicker-input form-control" type="text" size="16" value="12-02-2013" data-date-format="dd-mm-yyyy">
+                        <span class="help-block m-b-none">至</span>
+                        <input class="input-sm input-s datepicker-input form-control" type="text" size="16" value="12-02-2013" data-date-format="dd-mm-yyyy">
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label" for="input-id-1">Label focus</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" id="input-id-1" type="text">
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Password</label>
+                      <div class="col-sm-10">
+                        <input name="password" class="form-control" type="password">
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Placeholder</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="text" placeholder="placeholder">
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-lg-2 control-label">Static control</label>
+                      <div class="col-lg-10">
+                        <p class="form-control-static">email@example.com</p>
+                      </div>
+                    </div>                    
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Checkboxes and radios</label>
+                      <div class="col-sm-10">
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox" value="">
+                            Option one is this and that—be sure to include why it's great
+                          </label>
+                        </div>
+
+                        <div class="radio">
+                          <label>
+                            <input name="optionsRadios" id="optionsRadios1" type="radio" checked="" value="option1">
+                            Option one is this and that—be sure to include why it's great
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input name="optionsRadios" id="optionsRadios2" type="radio" value="option2">
+                            Option two can be something else and selecting it will deselect option one
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Inline checkboxes</label>
+                      <div class="col-sm-10">
+                        <label class="checkbox-inline">
+                          <input id="inlineCheckbox1" type="checkbox" value="option1"> a
+                        </label>
+                        <label class="checkbox-inline">
+                          <input id="inlineCheckbox2" type="checkbox" value="option2"> b
+                        </label>
+                        <label class="checkbox-inline">
+                          <input id="inlineCheckbox3" type="checkbox" value="option3"> c
+                        </label>
+                      </div>
+                    </div>                    
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Select</label>
+                      <div class="col-sm-10">
+                        <select name="account" class="form-control m-b">
+                          <option>option 1</option>
+                          <option>option 2</option>
+                          <option>option 3</option>
+                          <option>option 4</option>
+                        </select>
+                        <div class="col-lg-4 m-l-n">
+                          <select class="form-control" multiple="">
+                            <option>option 1</option>
+                            <option>option 2</option>
+                            <option>option 3</option>
+                            <option>option 4</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group has-success">
+                      <label class="col-sm-2 control-label">Input with success</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="text">
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group has-warning">
+                      <label class="col-sm-2 control-label">Input with warning</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="text">
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group has-error">
+                      <label class="col-sm-2 control-label">Input with error</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="text">
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Control sizing</label>
+                      <div class="col-sm-10">
+                        <input class="form-control input-lg m-b" type="text" placeholder=".input-lg">
+                        <input class="form-control m-b" type="text" placeholder="Default input">
+                        <input class="form-control input-sm" type="text" placeholder=".input-sm">
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Column sizing</label>
+                      <div class="col-sm-10">
+                        <div class="row">
+                          <div class="col-md-2">
+                            <input class="form-control" type="text" placeholder=".col-md-2">
+                          </div>
+                          <div class="col-md-3">
+                            <input class="form-control" type="text" placeholder=".col-md-3">
+                          </div>
+                          <div class="col-md-4">
+                            <input class="form-control" type="text" placeholder=".col-md-4">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Input groups</label>
+                      <div class="col-sm-10">
+                        <div class="input-group m-b">
+                          <span class="input-group-addon">@</span>
+                          <input class="form-control" type="text" placeholder="Username">
+                        </div>
+                        <div class="input-group m-b">
+                          <input class="form-control" type="text">
+                          <span class="input-group-addon">.00</span>
+                        </div>
+                        <div class="input-group m-b">
+                          <span class="input-group-addon">$</span>
+                          <input class="form-control" type="text">
+                          <span class="input-group-addon">.00</span>
+                        </div>
+                        <div class="input-group m-b">
+                          <span class="input-group-addon">
+                            <input type="checkbox">
+                          </span>
+                          <input class="form-control" type="text">
+                        </div>
+                        <div class="input-group">
+                          <span class="input-group-addon">
+                            <input type="radio">
+                          </span>
+                          <input class="form-control" type="text">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Button addons</label>
+                      <div class="col-sm-10">
+                        <div class="input-group m-b">
+                          <span class="input-group-btn">
+                            <button class="btn btn-white" type="button">Go!</button>
+                          </span>
+                          <input class="form-control" type="text">
+                        </div>
+                        <div class="input-group">
+                          <input class="form-control" type="text">
+                          <span class="input-group-btn">
+                            <button class="btn btn-white" type="button">Go!</button>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">With dropdowns</label>
+                      <div class="col-sm-10">
+                        <div class="input-group m-b">
+                          <div class="input-group-btn">
+                            <button class="btn btn-white dropdown-toggle" aria-expanded="false" type="button" data-toggle="dropdown">Action <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                              <li><a href="#">Action</a></li>
+                              <li><a href="#">Another action</a></li>
+                              <li><a href="#">Something else here</a></li>
+                              <li class="divider"></li>
+                              <li><a href="#">Separated link</a></li>
+                            </ul>
+                          </div><!-- /btn-group -->
+                          <input class="form-control" type="text">
+                        </div>
+                        <div class="input-group">
+                          <input class="form-control" type="text">
+                          <div class="input-group-btn">
+                            <button class="btn btn-white dropdown-toggle" type="button" data-toggle="dropdown">Action <span class="caret"></span></button>
+                            <ul class="dropdown-menu pull-right">
+                              <li><a href="#">Action</a></li>
+                              <li><a href="#">Another action</a></li>
+                              <li><a href="#">Something else here</a></li>
+                              <li class="divider"></li>
+                              <li><a href="#">Separated link</a></li>
+                            </ul>
+                          </div><!-- /btn-group -->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Segmented</label>
+                      <div class="col-sm-10">
+                        <div class="input-group m-b">
+                          <div class="input-group-btn">
+                            <button tabindex="-1" class="btn btn-white" type="button">Action</button>
+                            <button class="btn btn-white dropdown-toggle" aria-expanded="false" type="button" data-toggle="dropdown"><span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                              <li><a href="#">Action</a></li>
+                              <li><a href="#">Another action</a></li>
+                              <li><a href="#">Something else here</a></li>
+                              <li class="divider"></li>
+                              <li><a href="#">Separated link</a></li>
+                            </ul>
+                          </div><!-- /btn-group -->
+                          <input class="form-control" type="text">
+                        </div>
+                        <div class="input-group">
+                          <input class="form-control" type="text">
+                          <div class="input-group-btn">
+                            <button tabindex="-1" class="btn btn-white" type="button">Action</button>
+                            <button class="btn btn-white dropdown-toggle" type="button" data-toggle="dropdown"><span class="caret"></span></button>
+                            <ul class="dropdown-menu pull-right">
+                              <li><a href="#">Action</a></li>
+                              <li><a href="#">Another action</a></li>
+                              <li><a href="#">Something else here</a></li>
+                              <li class="divider"></li>
+                              <li><a href="#">Separated link</a></li>
+                            </ul>
+                          </div><!-- /btn-group -->
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Custom Radio and Checkbox (Retina display)</label>
+                      <div class="col-sm-10">
+                        <div class="row">
+                          <div class="col-sm-6">                    
+                            <!-- radio -->
+                            <div class="radio">
+                              <label class="radio-custom">
+                                <input name="radio" type="radio" checked="checked">
+                                <i class="fa fa-circle-o checked"></i>
+                                Item one checked
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label class="radio-custom">
+                                <input name="radio" type="radio">
+                                <i class="fa fa-circle-o"></i>
+                                Item two
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label class="radio-custom">
+                                <input name="radio" disabled="disabled" type="radio">
+                                <i class="fa fa-circle-o disabled"></i>
+                                Item three disabled
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label class="radio-custom">
+                                <input disabled="disabled" type="radio" checked="checked">
+                                <i class="fa fa-circle-o checked disabled"></i>
+                                Item four checked disabled
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-sm-6">
+                            <!-- checkbox -->
+                            <div class="checkbox">
+                              <label class="checkbox-custom">
+                                <input name="checkboxA" type="checkbox" checked="checked">
+                                <i class="fa fa-square-o checked"></i>
+                                Item one checked
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label class="checkbox-custom">
+                                <input name="checkboxB" id="2" type="checkbox">
+                                <i class="fa fa-square-o"></i>
+                                Item two
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label class="checkbox-custom">
+                                <input name="checkboxC" disabled="disabled" type="checkbox">
+                                <i class="fa fa-square-o disabled"></i>
+                                Item three disabled
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label class="checkbox-custom">
+                                <input name="checkboxD" disabled="disabled" type="checkbox" checked="checked">
+                                <i class="fa fa-square-o checked disabled"></i>
+                                Item four checked disabled
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Combobox</label>
+                      <div class="col-sm-10">
+                        <div class="input-group dropdown combobox" id="myCombobox">
+                          <input name="combobox" class="form-control" type="text">
+                          <div class="input-group-btn">
+                            <button class="btn btn-white dropdown-toggle" type="button" data-toggle="dropdown"><i class="caret"></i></button>
+                            <ul class="dropdown-menu pull-right">
+                              <li data-value="1"><a href="#">Item One</a></li>
+                              <li data-value="2"><a href="#">Item Two</a></li>
+                              <li data-value="3" data-fizz="buzz"><a href="#">Item Three</a></li>
+                              <li class="divider"></li>
+                              <li data-value="4"><a href="#">Item Four</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Spinner</label>
+                      <div class="col-sm-10">
+                        <div class="spinner input-group" id="MySpinner" data-max="10" data-min="1">
+                          <input name="spinner" class="form-control spinner-input" type="text" maxlength="3" value="1">
+                          <div class="btn-group btn-group-vertical input-group-btn">
+                            <button class="btn btn-white spinner-up" type="button">
+                              <i class="fa fa-chevron-up text-muted"></i>
+                            </button>
+                            <button class="btn btn-white spinner-down" type="button">
+                              <i class="fa fa-chevron-down text-muted"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Dropdown select</label>
+                      <div class="col-sm-10">              
+                        <div class="btn-group m-r">
+                          <button class="btn btn-sm btn-white dropdown-toggle" data-toggle="dropdown">
+                            <span class="dropdown-label">Option1</span> 
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu dropdown-select">
+                              <li class="active"><a href="#"><input name="d-s-r" type="radio" checked="">Option1</a></li>
+                              <li><a href="#"><input name="d-s-r" type="radio">Option2</a></li>
+                              <li><a href="#"><input name="d-s-r" type="radio">Option3</a></li>
+                              <li class="disabled"><a href="#"><input name="d-s-r" disabled="" type="radio">I'm disabled</a></li>
+                          </ul>
+                        </div>
+                        <div class="btn-group m-r">
+                          <button class="btn btn-sm btn-white dropdown-toggle" data-toggle="dropdown">
+                            <span class="dropdown-label" data-placeholder="Please select">Please select</span> 
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu dropdown-select">
+                              <li><a href="#"><input name="d-s-c-1" type="checkbox">Option1</a></li>
+                              <li><a href="#"><input name="d-s-c-2" type="checkbox">Option2</a></li>
+                              <li><a href="#"><input name="d-s-c-3" type="checkbox">Option3</a></li>
+                              <li><a href="#"><input name="d-s-c-4" type="checkbox">Option4</a></li>
+                              <li><a href="#"><input name="d-s-c-5" type="checkbox">Option5</a></li>
+                          </ul>
+                        </div>
+                        <div class="inline v-middle">
+                          <div class="input-group input-s-sm">
+                              <input class="input-sm form-control" id="appendedInput" type="text">
+                              <div class="input-group-btn">
+                                <button class="btn btn-white btn-sm dropdown-toggle" data-toggle="dropdown">
+                                  <span class="dropdown-label">USD</span>  
+                                  <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-select pull-right">
+                                  <li class="active">
+                                    <a href="#"><input name="pay_unit" type="radio" checked="" value="USD">USD</a>
+                                  </li>
+                                  <li>
+                                    <a href="#"><input name="pay_unit" type="radio" value="GBP">GBP</a>
+                                  </li>
+                                </ul>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Pillbox</label>
+                      <div class="col-sm-10">
+                        <div class="pillbox clearfix" id="MyPillbox">
+                          <ul>
+                            <li class="label bg-dark">Item One</li>
+                            <li class="label bg-success">Item Two</li>
+                            <li class="label bg-warning">Item Three</li>
+                            <li class="label bg-danger">Item Four</li>
+                            <li class="label bg-info">Item Five</li>
+                            <li class="label bg-success">Item Six</li>
+                            <input type="text" placeholder="add a pill">
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Slider</label>
+                      <div class="col-sm-10">
+                        <div class="slider slider-horizontal" style="width: 210px;"><div class="slider-track"><div class="slider-selection" style="left: 0%; width: 33.33%;"></div><div class="slider-handle round" style="left: 33.33%;"></div><div class="slider-handle round hide" style="left: 0%;"></div></div><div class="tooltip top" style="left: 55.5px; top: -30px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">10</div></div><input class="slider slider-horizontal form-control" type="text" value="" data-slider-orientation="horizontal" data-slider-value="10" data-slider-step="1" data-slider-max="20" data-slider-min="5"></div>
+                      </div>
+                    </div>
+
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Vertical slider</label>
+                      <div class="col-sm-10">
+                        <div class="slider slider-vertical"><div class="slider-track"><div class="slider-selection" style="top: 0%; height: 33.33%;"></div><div class="slider-handle round" style="top: 33.33%;"></div><div class="slider-handle round hide" style="top: 0%;"></div></div><div class="tooltip right" style="left: 100%; top: 58.5px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">10</div></div><input class="slider slider-vertical form-control" type="text" value="" data-slider-orientation="vertical" data-slider-value="10" data-slider-step="1" data-slider-max="20" data-slider-min="5"></div>
+                        <div class="slider slider-vertical"><div class="slider-track"><div class="slider-selection" style="top: 0%; height: 66.66%;"></div><div class="slider-handle round" style="top: 66.66%;"></div><div class="slider-handle round hide" style="top: 0%;"></div></div><div class="tooltip right" style="left: 100%; top: 128.5px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">15</div></div><input class="slider slider-vertical form-control" type="text" value="" data-slider-orientation="vertical" data-slider-value="15" data-slider-step="1" data-slider-max="20" data-slider-min="5"></div>
+                        <div class="slider slider-vertical"><div class="slider-track"><div class="slider-selection" style="top: 0%; height: 33.33%;"></div><div class="slider-handle round" style="top: 33.33%;"></div><div class="slider-handle round hide" style="top: 0%;"></div></div><div class="tooltip right" style="left: 100%; top: 58.5px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">10</div></div><input class="slider slider-vertical form-control" type="text" value="" data-slider-orientation="vertical" data-slider-value="10" data-slider-step="1" data-slider-max="20" data-slider-min="5"></div>
+                      </div>
+                    </div>
+
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Range selector</label>
+                      <div class="col-sm-10">
+                        <div class="slider slider-horizontal" style="width: 210px;"><div class="slider-track"><div class="slider-selection" style="left: 24.24%; width: 50.5%;"></div><div class="slider-handle round" style="left: 24.24%;"></div><div class="slider-handle round" style="left: 74.74%;"></div></div><div class="tooltip top" style="left: 70.93px; top: -30px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">250 : 750</div></div><input class="slider form-control" id="sl2" type="text" value="" data-slider-value="[250,750]" data-slider-step="5" data-slider-max="1000" data-slider-min="10"></div>
+                      </div>
+                    </div>
+
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Switch</label>
+                      <div class="col-sm-10">
+                        <label class="switch">
+                          <input type="checkbox">
+                          <span></span>
+                        </label>
+                      </div>
+                    </div>
+                    
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <div class="col-sm-4 col-sm-offset-2">
+                        <button class="btn btn-white" type="submit">Cancel</button>
+                        <button class="btn btn-primary" type="submit">Save changes</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </section>
+    </section></section>
+    </section>
+    <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a>
+    </section>
+    <form id="logout-form" action="logout" method="POST" style="display: none;"> <input type="hidden" name="_token" value="VaP9px9BizWROXl1wPtGvZYRI9BnpFhZ9Jh0QPCQ"> </form>
+    <script src="js/jquery.min.js"></script>
+    
+    <script src="js/bootstrap.js"></script>
+    
+    <script src="js/app.js"></script>
+    <script src="js/app.plugin.js"></script>
+    <script src="js/app.data.js"></script>
+    <script src="js/slimscroll/jquery.slimscroll.min.js" cache="false"></script>
+    <script src="js/charts/sparkline/jquery.sparkline.min.js"></script>
+    <script src="js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
+    <script src="js/parsley/parsley.min.js"></script>
+    <script src="js/parsley/parsley.extend.js"></script>
+    <script src="js/sortable/jquery.sortable.js"></script>
+    <script src="js/nestable/jquery.nestable.js" cache="false"></script>
+    <script src="js/nestable/demo.js" cache="false"></script>
+    <script src="js/datepicker/bootstrap-datepicker.js"></script>
+    </body>
+</html>

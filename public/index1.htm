@@ -1,14 +1,22 @@
-@extends('layouts.app')
-@section('home_active', 'active')
-@push('scripts')
-    <script src="{{cdn_url('js/charts/easypiechart/jquery.easy-pie-chart.js')}}"></script>
-    <script src="{{cdn_url('/js/fuelux/fuelux.js')}}"></script>
-    <script src="{{cdn_url('/js/datepicker/bootstrap-datepicker.js')}}"></script>
-@endpush
-@push('css')
-    <link href="{{cdn_url('/js/fuelux/fuelux.css')}}" rel="stylesheet">
-@endpush
-@section('content')
+<head>
+  <meta charset="utf-8" />
+  <title>BJMUN Operating System</title>
+  <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/font.css" type="text/css" cache="false" />
+  <link rel="stylesheet" href="css/plugin.css" type="text/css" />
+  <link href="js/nestable/nestable.css" rel="stylesheet" type="text/css" cache="false">
+  <link rel="stylesheet" href="css/app.css" type="text/css" />
+  <link rel="stylesheet" href="css/bjmun-os.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="js/ie/respond.min.js" cache="false"></script>
+    <script src="js/ie/html5.js" cache="false"></script>
+    <script src="js/ie/fix.js" cache="false"></script>
+  <![endif]-->
+</head>
 <section class="scrollable bg-light">
   <header>
     <div class="row b-b m-l-none m-r-none lter">
@@ -16,12 +24,6 @@
         <h3 class="m-t m-b-xs">主页</h3>
         <p class="block text-muted">欢迎使用 BJMUN Operating System</p>
       </div>
-    </div>
-    <div class="wrapper bg-light font-bold">
-      <a href="#" class="m-r"><i class="fa fa-chart-bar fa-2x icon-muted v-middle"></i> Analysis</a>
-      <a href="#" class="m-r"><span class="badge up m-r-n bg-danger">4</span><i class="fa fa-envelope fa-2x icon-muted v-middle"></i> Message</a>
-      <a href="#" class="m-r"><i class="fa fa-calendar fa-2x icon-muted v-middle"></i> My Calendar</a>
-      <a href="#"><i class="fa fa-cog fa-2x icon-muted v-middle"></i> Settings</a>
     </div>
   </header>
   <div class="scrollable">
@@ -81,12 +83,9 @@
         <p><a href="#"><i class="fa fa-cog fa-2x icon-muted v-middle"></i> Settings</a></p>
       </div>
       <div class="clear">
-        Powered by BJMUN Operating System<br>Copyright 2009-2022 BJMUN Association<br>All rights reserved</a>
+        Proudly Powered by MUNPANEL.<br>Copyright 2016-2017 Console iT.
+        <br><a title="京ICP备17022496号-1" href="http://www.miibeian.gov.cn/" rel="nofollow">京ICP备17022496号-1</a>
       </div>
     </div>
   </div>  
 </section>
-     <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a>
-    </section>
-    <!-- /.vbox -->
-@endsection
