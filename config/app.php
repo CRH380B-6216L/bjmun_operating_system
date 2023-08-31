@@ -170,8 +170,8 @@ return [
         Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
-        //Illuminate\View\ViewServiceProvider::class,
-        Wpb\String_Blade_Compiler\ViewServiceProvider::class,
+        Illuminate\View\ViewServiceProvider::class,
+        //Wpb\String_Blade_Compiler\ViewServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -193,14 +193,14 @@ return [
         App\Artisan\AppArtisanServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         //ChumPer\Zipper\ZipperServiceProvider::class,
-        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
-        Chumper\Zipper\ZipperServiceProvider::class,
+        //Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
+        //Chumper\Zipper\ZipperServiceProvider::class,
         Dingo\Api\Provider\LaravelServiceProvider::class,
         Aloha\Twilio\Support\Laravel\ServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         PragmaRX\Google2FA\Vendor\Laravel\ServiceProvider::class,
-        Sentry\SentryLaravel\SentryLaravelServiceProvider::class,
-        Pusher\Laravel\PusherServiceProvider::class,
+        //Sentry\SentryLaravel\SentryLaravelServiceProvider::class,
+        //Pusher\Laravel\PusherServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
         App\Providers\EntrustServiceProvider::class,
         Torann\GeoIP\GeoIPServiceProvider::class,
@@ -246,7 +246,7 @@ return [
         'Mail' => Illuminate\Support\Facades\Mail::class,
         'Notification' => Illuminate\Support\Facades\Notification::class,
         'Password' => Illuminate\Support\Facades\Password::class,
-        'Pusher' => Pusher\Laravel\Facades\Pusher::class,
+        'pusher' => Pusher\Pusher::class,
         'Queue' => Illuminate\Support\Facades\Queue::class,
         'Redirect' => Illuminate\Support\Facades\Redirect::class,
         'Redis' => Illuminate\Support\Facades\Redis::class,
@@ -262,7 +262,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Reg' => App\Reg::class,
-        //'Zipper' => Chumper\Zipper\Zipper::class,
+        'Zipper' => Chumper\Zipper\Zipper::class,
 
     ],
 
