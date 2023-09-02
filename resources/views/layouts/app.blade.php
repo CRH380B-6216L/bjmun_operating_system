@@ -8,11 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    @if (Reg::currentConferenceID() != 0)
-    <title>{{Reg::currentConference()->name}} {{is_object(Reg::current()) && Reg::current()->user->id != Auth::id() ? '(sudo mode)' : ''}} | BJMUN{{config('app.debug')?' CONFIDENTIAL':''}}</title>
-    @else
-    <title>BJMUN{{config('app.debug')?' CONFIDENTIAL':''}}</title>
-    @endif
+    <title>BJMUN Opearting System{{config('app.debug')?' - App:Debug':''}}</title>
     <meta name="keywords" content="BJMUN,MUN,Model UN,Model United Nations,United Nations,UN,PANEL,模联,模拟联合国">
     <meta name="copyright" content="Proudly Powered and Copyrighted by {{config('bjmun.copyright_year')}} BJMUN.">
     <meta name="generator" content="BJMUN Operating System">
@@ -178,13 +174,13 @@
               </li>
               @endif
 			  <li class="active">
-                <a href="/index.htm">
+                <a href="/home">
                   <i class="fa fa-home"></i>
                   <span>Home</span>
                 </a>
               </li>
               <li>
-                <a href="teams.htm">
+                <a href="/schools">
                   <i class="fa fa-university"></i>
                   <span>School</span>
                 </a>

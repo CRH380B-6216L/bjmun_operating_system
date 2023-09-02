@@ -9,6 +9,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Sentry\State\Hub;
+use Sentry\State\Scope;
 
 class SentryContext
 {
@@ -28,13 +30,19 @@ class SentryContext
             // Add user context
             $user = $request->user();
             if (is_object($user)) {
-                $sentry->user_context(['id' => $user->id, 'rid' => \App\Reg::currentID(), 'username' => $user->name, 'email' => $user->email, 'ip_address' => $request->ip()]);
+                $sentry->configureScope(function (Scope $scope): void {
+                    $scope->setUser(['id' => $user->id, 'rid' => \App\Reg::currentID(), 'username' => $user->name, 'email' => $user->email, 'ip_address' => $request->ip()]);
+                }); 
             } else {
-                $sentry->user_context(['id' => null]);
+                $sentry->configureScope(function (Scope $scope): void {
+                    $scope->setUser(['id' => null]);
+                }); 
             }
 
             // Add tags context
-            $sentry->tags_context(['conference_id' => \App\Reg::currentConferenceID()]);
+            $sentry->configureScope(function (Scope $scope): void {
+                $scope->setTag('conference_id', \App\Reg::currentConferenceID());
+            });
         }
         return $next($request);
     }
