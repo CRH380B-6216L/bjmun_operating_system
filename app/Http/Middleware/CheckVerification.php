@@ -34,11 +34,11 @@ class CheckVerification
             if (substr($route, 0, 6) != 'verify' && $route != 'logout' && $request->getHost() != "static.munpanel.com") {
                 if ($user->emailVerificationToken != 'success')
                     return redirect()->guest(route('verifyEmail'));
-                if ($user->telVerifications != -1) //3/2/1: tries left; -1: activated
-                    return redirect()->guest(route('verifyTel'));
+                //if ($user->telVerifications != -1) //3/2/1: tries left; -1: activated
+                //    return redirect()->guest(route('verifyTel'));
             }
             //*/
-            $cid = config('munpanel.conference_id');
+            $cid = null;//config('bjmun.conference_id');
             if (isset($cid)) //portal pages otherwise, will use Auth::user() instead
             {
                 $regid = $request->session()->get('regIdforConference'.$cid);

@@ -68,7 +68,7 @@ class LoginController extends Controller
 
         session(['url.intended' => $previous]);
 
-        return redirect(route('login'));
+        return redirect('/home');
     }
 
     /**

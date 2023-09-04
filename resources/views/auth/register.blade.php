@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Registration | MUNPANEL</title>
+  <title>Register | BJMUN Operating System</title>
   <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -11,10 +11,10 @@
   <link rel="shortcut icon" href="/favicon.ico">
   <meta name="theme-color" content="#5dcff3">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <meta name="keywords" content="MUNPANEL,MUN,Model UN,Model United Nations,United Nations,UN,PANEL,模联,模拟联合国">
-  <meta name="description" content="Register a MUNPANEL account.">
-  <meta name="copyright" content="Proudly Powered and Copyrighted by {{config('munpanel.copyright_year')}} MUNPANEL.">
-  <meta name="generator" content="MUNPANEL System">
+  <meta name="keywords" content="BJMUN Operating System,MUN,Model UN,Model United Nations,United Nations,UN,PANEL,模联,模拟联合国">
+  <meta name="description" content="Register a BJMUN Operating System account.">
+  <meta name="copyright" content="Proudly Powered and Copyrighted by {{config('munpanel.copyright_year')}} BJMUN Operating System.">
+  <meta name="generator" content="BJMUN Operating System">
   <meta name="author" content="Adam Yi">
   <link rel="stylesheet" href="{{cdn_url('css/bootstrap.css')}}" type="text/css" />
   <link rel="stylesheet" href="{{cdn_url('css/animate.css')}}" type="text/css" />
@@ -33,11 +33,11 @@
       $('#regForm').submit();
   }
   </script>
-  <script src="https://{{config('recaptcha.domain')}}/recaptcha/api.js" async defer></script>
+  <!--script src="https://{{config('recaptcha.domain')}}/recaptcha/api.js" async defer></script-->
 </head>
 <body>
   <section id="content" class="m-t-lg wrapper-md animated fadeInDown">
-    <a class="nav-brand" href="#">MUNPANEL</a>
+    <a class="nav-brand" href="#">BJMUN Operating System</a>
     <div class="row m-n">
       <div class="col-md-4 col-md-offset-4 m-t-lg">
         <section class="panel">
@@ -58,11 +58,11 @@
             {{ csrf_field() }}
             <div class="form-group">
               <label class="control-label">真实姓名</label>
-              <input type="text" name="name" placeholder="eg. 易轩" class="form-control" data-required="true" value="{{ old('name') }}">
+              <input type="text" name="name" placeholder="eg. 李华" class="form-control" data-required="true" value="{{ old('name') }}">
             </div>
             <div class="form-group">
               <label class="control-label">Email</label>
-              <input type="text" name="email" placeholder="eg. adamxuanyi@gmail.com" class="form-control" data-required="true" data-type="email" value="{{ old('email') }}">
+              <input type="text" name="email" placeholder="eg. user@bjmun.org" class="form-control" data-required="true" data-type="email" value="{{ old('email') }}">
             </div>
             <div class="form-group">
               <label class="control-label">密码</label>
@@ -82,13 +82,13 @@
               </label>
             </div-->
             <button class="btn btn-info" type="submit" id="reg-submit">注册</button>
-             <div id='recaptcha' class="g-recaptcha"
+             <!--div id='recaptcha' class="g-recaptcha"
                   data-sitekey="{{config('recaptcha.sitekey')}}"
                   data-callback="onSubmit"
-                  data-size="invisible"></div>
+                  data-size="invisible"></div-->
             <div class="line line-dashed"></div>
             <p class="text-muted text-center"><small>已有账号?</small></p>
-            <a href="{{ mp_url('/login') }}" class="btn btn-white btn-block">登陆</a>
+            <a href="{{ mp_url('/login') }}" class="btn btn-white btn-block">登录</a>
           </form>
         </section>
       </div>
@@ -98,7 +98,7 @@
   <footer id="footer">
     <div class="text-center padder clearfix">
       <p>
-        <small>&copy; {{config('munpanel.copyright_year')}} MUNPANEL. All rights reserved.
+        <small>&copy; {{config('munpanel.copyright_year')}} BJMUN Operating System. All rights reserved.
         @if(null !== config('munpanel.icp_license'))
         <br/><a href="http://www.miibeian.gov.cn/" title="{{config('munpanel.icp_license')}}" rel="nofollow">{{config('munpanel.icp_license')}}</a>
         @endif</small>
@@ -117,7 +117,8 @@
   <!-- Parsley -->
   <script src="{{cdn_url('js/parsley/parsley.min.js')}}"></script>
   <script src="{{cdn_url('js/parsley/parsley.extend.js')}}"></script>
-  <script>
+  <!-- reCaptcha -->
+  <!--script>
   $('#reg-submit').click(function(e) {
       e.preventDefault();
       if ($('#regForm').parsley('validate')) {
@@ -126,7 +127,7 @@
       } else
           grecaptcha.reset();
   });
-  </script>
+  </script-->
   <script>setInterval(function(){var e=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject('Microsoft.XMLHTTP');e.open('GET','{{mp_url('/keepalive')}}',!0);e.setRequestHeader('X-Requested-With','XMLHttpRequest');e.send();}, 1200000);</script>
 </body>
 </html>

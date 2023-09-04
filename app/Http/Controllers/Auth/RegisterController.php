@@ -73,10 +73,10 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'emailVerificationToken' => generateID(),
-            'google2fa_enabled' => false
+            //'google2fa_enabled' => false
             //'type' => 'unregistered'
         ]);
-        $user->sendVerificationEmail();
+        //$user->sendVerificationEmail();
         return $user;
     }
 }

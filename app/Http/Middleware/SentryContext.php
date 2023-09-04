@@ -29,9 +29,9 @@ class SentryContext
 
             // Add user context
             $user = $request->user();
-            if (is_object($user)) {
-                $sentry->configureScope(function (Scope $scope): void {
-                    $scope->setUser(['id' => $user->id, 'rid' => \App\Reg::currentID(), 'username' => $user->name, 'email' => $user->email, 'ip_address' => $request->ip()]);
+            if (null !== $user) {
+                $sentry->configureScope(function (Scope $scope) use ($user, $request): void {
+                    $scope->setUser(['id' => $user->id, 'username' => $user->name, 'email' => $user->email, 'ip_address' => $request->ip()]);
                 }); 
             } else {
                 $sentry->configureScope(function (Scope $scope): void {
@@ -40,10 +40,11 @@ class SentryContext
             }
 
             // Add tags context
-            $sentry->configureScope(function (Scope $scope): void {
-                $scope->setTag('conference_id', \App\Reg::currentConferenceID());
+            $conferenceID = \App\Reg::currentConferenceID();
+            $sentry->configureScope(function (Scope $scope) use ($conferenceID): void {
+                $scope->setTag('conference_id', $conferenceID);
             });
         }
-        return $next($request);
+    return $next($request);
     }
 }

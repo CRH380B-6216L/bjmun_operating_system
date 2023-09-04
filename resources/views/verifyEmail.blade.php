@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Account Verification | MUNPANEL</title>
+  <title>Account Verification | BJMUN Operating System</title>
   <link rel="icon" href="{{cdn_url('/images/favicon.ico')}}" type="image/x-icon" />
   <link rel="shortcut icon" href="{{cdn_url('/images/favicon.ico')}}" type="image/x-icon" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -32,14 +32,14 @@
 </head>
 <body>
   <section id="content" class="m-t-lg wrapper-md animated fadeInUp">
-    <a class="nav-brand" href="#">MUNPANEL</a>
+    <a class="nav-brand" href="#">BJMUN Operating System</a>
     <div class="row m-n">
       <div class="col-md-4 col-md-offset-4 m-t-lg">
         <section class="panel">
           <header class="panel-heading text-center">
             请验证您的电子邮箱
           </header>
-            <div class="panel-body"><div class="alert alert-info">感谢您使用MUNPANEL！我们已发送一封激活邮件到您的邮箱({{Auth::user()->email}})。请根据邮件提示激活您的账户。未激活的账户将不能使用任何 MUNPANEL 服务，会议组织团队亦不可查看您的报名信息。</div></div>
+            <div class="panel-body"><div class="alert alert-info">感谢您使用BJMUN Operating System！我们已发送一封激活邮件到您的邮箱({{Auth::user()->email}})。请根据邮件提示激活您的账户。未激活的账户将不能使用任何 BJMUN Operating System 服务，会议组织团队亦不可查看您的报名信息。</div></div>
 <div class="line line-dashed"></div>
             <p class="text-muted text-center"><small>没有收到邮件?</small></p>
             <a href="{{ mp_url('/verifyEmail/resend') }}" class="btn btn-white btn-block" onclick="loader(this)">再发一封</a>
@@ -51,7 +51,7 @@
   <!-- footer -->
   <footer id="footer">
     <div class="text-center padder clearfix">
-      <p><small>&copy; {{config('munpanel.copyright_year')}} MUNPANEL. All rights reserved.</small></p>
+      <p><small>&copy; {{config('munpanel.copyright_year')}} BJMUN Operating System. All rights reserved.</small></p>
     </div>
   </footer>
   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> {{ csrf_field() }} </form>

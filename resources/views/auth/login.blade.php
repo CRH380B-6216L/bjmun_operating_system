@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Sign In | MUNPANEL</title>
+  <title>Sign In | BJMUN Operating System</title>
   <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -11,10 +11,10 @@
   <link rel="shortcut icon" href="/favicon.ico">
   <meta name="theme-color" content="#5dcff3">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <meta name="keywords" content="MUNPANEL,MUN,Model UN,Model United Nations,United Nations,UN,PANEL,模联,模拟联合国">
-  <meta name="description" content="Sign in to your MUNPANEL account.">
-  <meta name="copyright" content="Proudly Powered and Copyrighted by {{config('munpanel.copyright_year')}} MUNPANEL.">
-  <meta name="generator" content="MUNPANEL System">
+  <meta name="keywords" content="BJMUN Operating System,MUN,Model UN,Model United Nations,United Nations,UN,PANEL,模联,模拟联合国">
+  <meta name="description" content="Sign in to your BJMUN Operating System account.">
+  <meta name="copyright" content="Proudly Powered and Copyrighted by {{config('munpanel.copyright_year')}} BJMUN Operating System.">
+  <meta name="generator" content="BJMUN Operating System">
   <meta name="author" content="Adam Yi">
   <link rel="stylesheet" href="{{cdn_url('css/bootstrap.css')}}" type="text/css" />
   <link rel="stylesheet" href="{{cdn_url('css/animate.css')}}" type="text/css" />
@@ -33,20 +33,20 @@
       $('#loginForm').submit();
   }
   </script>
-  <script src="https://{{config('recaptcha.domain')}}/recaptcha/api.js" async defer></script>
+  <!--script src="https://{{config('recaptcha.domain')}}/recaptcha/api.js" async defer></script-->
 </head>
 <body>
   <section id="content" class="m-t-lg wrapper-md animated fadeInUp">
-    <a class="nav-brand" href="#">MUNPANEL</a>
+    <a class="nav-brand" href="#">BJMUN Operating System</a>
     <div class="row m-n">
       <div class="col-md-4 col-md-offset-4 m-t-lg">
         <section class="panel">
           <header class="panel-heading text-center">
-            登陆&nbsp({{isset($mailLogin)?"Console Mail":"MUNPANEL"}}&nbsp账号)
+            登陆&nbsp({{isset($mailLogin)?"Console Mail":"BJMUN Operating System"}}&nbsp账号)
           </header>
           @if (isset($mailLogin))
               <div class="alert alert-info">
-                  此通道仅用于拥有 Console Mail 邮箱账号的用户；对于大部分用户，请使用 MUNPANEL 账号登陆。
+                  此通道仅用于拥有 Console Mail 邮箱账号的用户；对于大部分用户，请使用 BJMUN Operating System 账号登陆。
               </div>
           @endif
           @if (count($errors) > 0)
@@ -62,7 +62,7 @@
             {{ csrf_field() }}
             <div class="form-group">
               <label class="control-label">Email</label>
-              <input type="text" id="email" name="email" placeholder="eg. yixuan@bjmun.org" class="form-control" data-required="true" value="{{ old('email') }}" autofocus>
+              <input type="text" id="email" name="email" placeholder="eg. user@bjmun.org" class="form-control" data-required="true" value="{{ old('email') }}" autofocus>
             </div>
             <div class="form-group">
               <label class="control-label">密码</label>
@@ -74,7 +74,7 @@
               </label>
             </div>
             <a href="{{ mp_url('/password/reset') }}" class="pull-right m-t-xs"><small>忘记密码?</small></a>
-            <button class="btn btn-info" type="submit" id="login-submit">登陆</button>
+            <button class="btn btn-info" type="submit" id="login-submit">登录</button>
              <div id='recaptcha' class="g-recaptcha"
                   data-sitekey="{{config('recaptcha.sitekey')}}"
                   data-callback="onSubmit"
@@ -82,11 +82,11 @@
             <div class="line line-dashed"></div>
             <p class="text-muted text-center"><small>没有账号?</small></p>
             <a href="{{ mp_url('/register') }}" class="btn btn-white btn-block">注册新账号</a>
-            @if (isset($mailLogin))
-            <a href="{{ mp_url('/login') }}" class="btn btn-white btn-block">使用 MUNPANEL 账号登录</a>
+            <!--@if (isset($mailLogin))
+            <a href="{{ mp_url('/login') }}" class="btn btn-white btn-block">使用 BJMUN Operating System 账号登录</a>
             @else
             <a href="{{ mp_url('/loginViaConsoleMail') }}" class="btn btn-white btn-block">使用 Console Mail 账号登录</a>
-            @endif
+            @endif-->
           </form>
         </section>
       </div>
@@ -95,7 +95,7 @@
   <!-- footer -->
   <footer id="footer">
     <div class="text-center padder clearfix">
-      <p><small>&copy; {{config('munpanel.copyright_year')}} MUNPANEL. All rights reserved.
+      <p><small>&copy; {{config('munpanel.copyright_year')}} BJMUN Operating System. All rights reserved.
       @if(null !== config('munpanel.icp_license'))
       <br/><a href="http://www.miibeian.gov.cn/" title="{{config('munpanel.icp_license')}}" rel="nofollow">{{config('munpanel.icp_license')}}</a>
       @endif
@@ -113,7 +113,8 @@
   <!-- Parsley -->
   <script src="{{cdn_url('js/parsley/parsley.min.js')}}"></script>
   <script src="{{cdn_url('js/parsley/parsley.extend.js')}}"></script>
-  <script>
+  <!-- reCaptcha -->
+  <!--script>
   $('#login-submit').click(function(e) {
       e.preventDefault();
       if ($('#loginForm').parsley('validate')) {
@@ -122,7 +123,7 @@
       } else
           grecaptcha.reset();
   });
-  </script>
+  </script-->
   <script>setInterval(function(){var e=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject('Microsoft.XMLHTTP');e.open('GET','{{mp_url('/keepalive')}}',!0);e.setRequestHeader('X-Requested-With','XMLHttpRequest');e.send();}, 1200000);</script>
 </body>
 </html>

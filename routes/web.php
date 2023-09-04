@@ -60,15 +60,15 @@ Route::group(['domain' => config('munpanel.portalDomain')], function () {
 
     // Authentication Routes...
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-    Route::post('login', 'Auth\LoginController@login')->middleware('recaptcha');
+    Route::post('login', 'Auth\LoginController@login');//->middleware('recaptcha');
     Route::post('logout', 'Auth\LoginController@logout')->name('logout');
     Route::get('/loginViaConsoleMail', 'Auth\\LoginController@loginConsoleMail');
-    Route::post('/loginMail', 'Auth\\LoginController@doLoginMail')->middleware('recaptcha');
+    Route::post('/loginMail', 'Auth\\LoginController@doLoginMail');//->middleware('recaptcha');
 
 
     // Registration Routes...
     Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-    Route::post('register', 'Auth\RegisterController@register')->middleware('recaptcha');
+    Route::post('register', 'Auth\RegisterController@register');//->middleware('recaptcha');
 
     // Password Reset Routes...
     Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
@@ -141,7 +141,7 @@ Route::group(['domain' => 'static.munpanel.com'], function () {
         return redirect(secure_url('home'));
     });
     
-    Route::get('/login', 'HomeController@loginRedirect');
+    //Route::get('/login', 'HomeController@loginRedirect');
 
     Route::get('500', function()
     {
