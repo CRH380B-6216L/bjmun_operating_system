@@ -8,7 +8,7 @@
  *
  * Developed by Adam Yi <xuan@yiad.am>
 *
-* Supervised for BJMUN Opearting System at 2022
+* Supervised for BJMUN Operating System at 2022
  */
 
 use Illuminate\Support\Facades\Schema;

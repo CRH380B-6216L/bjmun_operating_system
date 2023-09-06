@@ -5,7 +5,7 @@
  *
  * Open-sourced under AGPL v3 License.
  * 
- * Supervised for BJMUN Opearting System at 2022
+ * Supervised for BJMUN Operating System at 2022
  */
 
 namespace App\Http\Middleware;
