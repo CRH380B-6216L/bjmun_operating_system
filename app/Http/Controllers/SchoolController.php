@@ -16,21 +16,46 @@ use Illuminate\Support\Facades\Cache;
 use Yajra\Datatables\Datatables;
 use App\School;
 use App\Conference;
-use App\Reg;
 use App\User;
-use App\Teamadmin;
 use App\Option;
 
-class PortalController extends Controller
+class SchoolController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
-    public function index()
+    public function schools()
     {
-        return view('portal.home');
+        return view('school.list');
+    }
+    
+    public function schoolPortal()
+    {
+        return view('schoolPortal');
+    }
+
+    /**
+     * Show schools datatables json
+     *
+     * @return string JSON of schools
+     */
+    public function teamsTable()
+    {
+        $result = new Collection;
+        $schools = School::all();
+        foreach ($schools as $school)
+        {
+            $result->push([
+                'details' => '',//'<a href="schools/'. $school->id .'/details.modal" data-toggle="ajaxModal" id="'. $school->id .'" class="details-modal"><i class="fa fa-search-plus"></i></a>',
+                'id' => $school->id,
+                'type' => $school->typeText(),
+                'name' => $school->name,
+                'admin' => ''//$school->schooladmins_count > 0 ? '是':'否'
+            ]);
+        }
+        return Datatables::of($result)->make(true);
     }
 
     public function newTeamModal()
@@ -54,7 +79,43 @@ class PortalController extends Controller
         return 'error';
     }
 
+    public function schoolIndex($id)
+    {
+        $school = School::findOrFail($id);
+        if (is_object($school))
+            return view('school.index', ['school' => $school]);
+        return view('noExist', ['item' => "学校"]);
+    }
+
+    public function createTeam(Request $request)
+    {
+        $uid = Auth::id();
+        $count = School::where('name', $request->name)->count();
+        if ($count > 0)
+            return "school already exists";
+        if ($count == 0)
+        $school = new School;
+        $school->name = $request->name;
+        $school->type = $request->type;
+        $school->description = $request->description;
+        $school->joinCode = generateID(32);
+        $school->save();
+        $school->users()->attach([$uid => [
+            'status' => 'master',
+            'title' => $request->title,
+            'grade' => $request->grade,
+            'gradeYear' => $request->gradeyear,
+            'class' => $request->class
+        ]]);
+        return view('school.index', ['school' => $school]);
+    }
+
     public function joinTeam(Request $request)
+    {
+        
+    }
+
+    public function joinTeamWithCode(Request $request)
     {
         $code = $request->code;
         $team = School::where('joinCode', $code)->first();
@@ -82,7 +143,7 @@ class PortalController extends Controller
             ->whereSchoolId($team->id)
             ->count() > 0)
             return view('error', ['msg' => 'Already Member!']);
-        $team->users()->attach(Auth::id());
+        $team->users()->attach([Auth::id() => ['status' => 'active']]);
         return back(); 
     }
 

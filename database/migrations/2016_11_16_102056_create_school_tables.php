@@ -32,7 +32,7 @@ class CreateSchoolTables extends Migration
             $table->enum('type', ['school', 'university'])->default('school'); //如果非理事校可能选择大学
             $table->string('description')->nullable(); //本校模联社自我绍介
             $table->enum('payment_method', ['individual', 'group']);
-            //$table->string('joinCode')->nullable();
+            $table->string('joinCode')->nullable();
             $table->timestamps();
             //$table->foreign('reg_id')->references('id')->on('regs')->onDelete('cascade');
         });

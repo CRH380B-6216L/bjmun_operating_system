@@ -6,7 +6,7 @@
    <div class="modal-body">
      <div class="row">
        <div class="col-sm-12 b-r">
-        <form id="delAdmin" class="form-horizontal" data-validate="parsley" action="{{mp_url('/teams/doDelAdmin')}}" method="post">
+        <form id="delAdmin" class="form-horizontal" data-validate="parsley" action="{{mp_url('/schools/doDelAdmin')}}" method="post">
             {{csrf_field()}}
                 <div class="form-group">
                   <div class="col-sm-12">
@@ -29,7 +29,7 @@
 <script>
 function submitAdmin()
 {
-    $.post('{{mp_url('/teams/doDelAdmin')}}', $('#delAdmin').serialize()).done(function(data) {
+    $.post('{{mp_url('/schools/doDelAdmin')}}', $('#delAdmin').serialize()).done(function(data) {
         $.snackbar({content: data});
         $('#ajaxModal').modal('hide');
         $('#ajaxModal').remove();

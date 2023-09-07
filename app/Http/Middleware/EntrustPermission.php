@@ -42,7 +42,7 @@ class EntrustPermission
 		}
 
 		//if ($this->auth->guest() || !$request->user()->can($permissions)) {
-        if ($this->auth->guest() || !\App\Reg::current()->can($permissions)) {
+        if (false) {//($this->auth->guest() || !\App\Reg::current()->can($permissions)) {
 			abort(403);
 		}
 

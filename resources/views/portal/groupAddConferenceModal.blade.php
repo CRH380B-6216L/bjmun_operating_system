@@ -33,7 +33,7 @@
 <script>
 function submitAdmin()
 {
-    $.post('{{mp_url('/teams/'.$group->id.'/admin/doAddConference')}}', $('#addConference').serialize()).done(function(data) {
+    $.post('{{mp_url('/schools/'.$group->id.'/admin/doAddConference')}}', $('#addConference').serialize()).done(function(data) {
         $.snackbar({content: data});
         $('#ajaxModal').modal('hide');
         $('#ajaxModal').remove();

@@ -38,25 +38,27 @@ Route::group(['domain' => config('munpanel.portalDomain')], function () {
     });
 
     Route::get('/home', 'PortalController@index')->name('portal');
-    Route::get('/teams', 'PortalController@teams');
-    Route::get('/teams/new.modal', 'PortalController@newTeamModal');
-    Route::get('/teams/join.modal', 'PortalController@joinTeamModal');
-    Route::get('/teams/{id}/details.modal', 'PortalController@detailsModal');
-    Route::post('/teams/{id}/doUpdate', 'PortalController@updateTeam');
-    Route::get('/teams/{id}/admin', 'PortalController@teamAdmin');
-    Route::get('/teams/{id}/admin/members', 'PortalController@teamMembers');
-    Route::get('/teams/{id}/admin/members.ajax', 'PortalController@groupMemberTable');
-    Route::get('/teams/{id}/admin/conferences', 'PortalController@groupConferences');
-    Route::get('/teams/{id}/admin/conferences.ajax', 'PortalController@groupConferencesTable');
-    Route::get('/teams/{gid}/groupMember/{uid}/addAdmin.modal', 'PortalController@groupMemberAddAdminModal');
-    Route::get('/teams/{gid}/groupMember/{uid}/delAdmin.modal', 'PortalController@groupMemberDelAdminModal');
-    Route::get('/teams/{id}/admin/conferences/add.modal', 'PortalController@groupAddConferenceModal');
-    Route::post('/teams/{id}/admin/doAddConference', 'PortalController@groupAddConf');
-    Route::post('/teams/doCreateTeam', 'PortalController@createTeam');
-    Route::post('/teams/doAddAdmin', 'PortalController@addAdmin');
-    Route::post('/teams/doDelAdmin', 'PortalController@delAdmin');
-    Route::post('/teams/doJoinTeam', 'PortalController@joinTeam')->name('doJoinTeam');
-    Route::get('/ajax/teams', 'PortalController@teamsTable');
+    Route::get('/schools/new.modal', 'PortalController@newTeamModal');
+    Route::get('/schools/join.modal', 'PortalController@joinTeamModal');
+    Route::get('/schools/joinWithCode.modal', 'PortalController@joinTeamWithCodeModal');
+    Route::get('/school/{id}', 'SchoolController@schoolIndex');
+    Route::get('/school/{id}/details.modal', 'PortalController@detailsModal');
+    Route::post('/school/{id}/doUpdate', 'PortalController@updateTeam')->middleware('auth');
+    Route::get('/school/{id}/admin', 'PortalController@teamAdmin')->middleware('auth');
+    Route::get('/school/{id}/admin/members', 'PortalController@teamMembers')->middleware('auth');
+    Route::get('/school/{id}/admin/members.ajax', 'PortalController@groupMemberTable')->middleware('auth');
+    Route::get('/school/{id}/admin/conferences', 'PortalController@groupConferences');
+    Route::get('/school/{id}/admin/conferences.ajax', 'PortalController@groupConferencesTable');
+    Route::get('/schools/{gid}/groupMember/{uid}/addAdmin.modal', 'PortalController@groupMemberAddAdminModal');
+    Route::get('/schools/{gid}/groupMember/{uid}/delAdmin.modal', 'PortalController@groupMemberDelAdminModal');
+    Route::get('/school/{id}/admin/conferences/add.modal', 'PortalController@groupAddConferenceModal');
+    Route::post('/school/{id}/admin/doAddConference', 'PortalController@groupAddConf');
+    Route::post('/schools/doCreateSchool', 'SchoolController@createTeam')->middleware('auth');
+    Route::post('/schools/doAddAdmin', 'PortalController@addAdmin')->middleware('auth');
+    Route::post('/schools/doDelAdmin', 'PortalController@delAdmin')->middleware('auth');
+    Route::post('/schools/doJoinSchool', 'SchoolController@joinTeam')->name('doJoinTeam')->middleware('auth');
+    Route::post('/schools/doJoinSchoolWithCode', 'SchoolController@joinTeamWithCode')->name('doJoinTeamWithCode')->middleware('auth');
+    Route::get('/ajax/schoollist', 'SchoolController@teamsTable');
 
     // Authentication Routes...
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -174,6 +176,9 @@ Route::group(['domain' => 'static.munpanel.com'], function () {
     Route::get('/home', 'HomeController@index');
     Route::get('/changePwd.modal', 'HomeController@changePwd');
     Route::post('/changePwd', 'UserController@doChangePwd');
+
+    Route::get('/schools', 'SchoolController@schoolPortal');
+    Route::get('/schools/list', 'SchoolController@schools');
 
     // TODO: 判定 - 代表 or 学团 or 组委？
     Route::get('/assignments', 'HomeController@assignmentsList');

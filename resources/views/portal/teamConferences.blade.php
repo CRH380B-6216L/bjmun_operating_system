@@ -16,8 +16,8 @@
               <div class="row m-t-sm">
                 <div class="col-sm-6 m-b-xs">
                   <!--a href="#subNav" data-toggle="class:hide" class="btn btn-sm btn-info"><i class="fa fa-caret-right text fa fa-large"></i><i class="fa fa-caret-left text-active fa fa-large"></i></a-->
-                  <a href="{{mp_url('/teams/'.$team->id.'/admin')}}" class="btn btn-sm btn-success">BACK</a>
-                  <a href="{{mp_url('/teams/'.$team->id.'/admin/conferences/add.modal')}}" class="btn btn-sm btn-info" data-toggle="ajaxModal">允许参加新的会议</a>
+                  <a href="{{mp_url('/schools/'.$team->id.'/admin')}}" class="btn btn-sm btn-success">BACK</a>
+                  <a href="{{mp_url('/schools/'.$team->id.'/admin/conferences/add.modal')}}" class="btn btn-sm btn-info" data-toggle="ajaxModal">允许参加新的会议</a>
                 </div>
                 <div class="col-sm-6 m-b-xs">
                   <div class="input-group">

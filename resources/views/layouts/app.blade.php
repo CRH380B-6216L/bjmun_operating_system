@@ -1,3 +1,6 @@
+@php
+
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +11,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>BJMUN Opearting System{{config('app.debug')?' - App:Debug':''}}</title>
+    <title>BJMUN Operating System{{config('app.debug')?' - App:Debug':''}}</title>
     <meta name="keywords" content="BJMUN,MUN,Model UN,Model United Nations,United Nations,UN,PANEL,模联,模拟联合国">
     <meta name="copyright" content="Proudly Powered and Copyrighted by {{config('bjmun.copyright_year')}} BJMUN.">
     <meta name="generator" content="BJMUN Operating System">
@@ -95,28 +98,9 @@
                 <li>
                   <a href="help.html">Help</a>
                 </li-- >
-                <li>
-                  @if (is_object(Reg::current()))
-                  @if (Reg::currentConferenceID() == 0)
-                  <a href="{{ mp_url('/changePwd.modal') }}" data-toggle="ajaxModal">修改密码</a>
-                  @elseif (Reg::current()->user_id == Auth::id())
-                  <a href="{{ mp_url('/changePwd.modal') }}" data-toggle="ajaxModal">修改密码</a>
-                  <a href="{{mp_url('/selectIdentityModal')}}" data-toggle="ajaxModal">切换身份</a>
-                  @else
-                  <a href="{{mp_url('/selectIdentityModal')}}" data-toggle="ajaxModal">切换身份(退出SUDO)</a>
-                  @endif
-                  @else
-                  <a href="{{ mp_url('/login') }}">登录</a>
-                  @endif
-                  <a href="{{ mp_url('/help.html') }}">帮助</a>
-                  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">注销</a>
-                </li>
+                
               </ul>
-              <div class="visible-xs m-t m-b">
-                @if (Auth::check())
-                <a href="#" class="h3">{{ is_object(Reg::current())?Reg::current()->name():Auth::user()->name }}</a>
-                @endif
-              </div>
+              
             </div>
             <!--div class="nav-msg">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -165,7 +149,7 @@
                 </a>
               </li>
               @endif
-              @if (is_object(Reg::current()) && Reg::current()->user_id != Auth::id())
+              @if (false) <!--(is_object(Reg::current()) && Reg::current()->user_id != Auth::id())-->
               <li class="bg-warning @yield('sudo_active')">
                 <a href="{{ mp_url('/aboutSudo') }}">
                   <i class="fa fa-address-card"></i>
@@ -173,18 +157,7 @@
                 </a>
               </li>
               @endif
-			  <li class="active">
-                <a href="/home">
-                  <i class="fa fa-home"></i>
-                  <span>Home</span>
-                </a>
-              </li>
-              <li>
-                <a href="/schools">
-                  <i class="fa fa-university"></i>
-                  <span>School</span>
-                </a>
-              </li>
+              @include('layouts.portal')
               <li>
                 <a href="conferences">
                   <i class="fa fa-gavel"></i>
@@ -216,22 +189,7 @@
                   <span>Community</span>
                 </a>
               </li>
-
-<!--
-                @if (Reg::currentConferenceID() == 0)
-                @include('layouts.portal')
-                @elseif (is_object(Reg::current()) && Reg::current()->type == 'teamadmin')
-                @include('layouts.school')
-                @elseif (is_object(Reg::current()) && Reg::current()->type == 'ot')
-                @include('layouts.ot')
-                @elseif (is_object(Reg::current()) && Reg::current()->type == 'dais')
-                @include('layouts.dais')
-                @elseif (is_object(Reg::current()) && Reg::current()->type == 'interviewer')
-                @include('layouts.interviewer')
-                @else
-                @include('layouts.delegate')
-                @endif-->
-                @if (Reg::currentConferenceID() != 0 && is_object(Reg::current()) && Reg::current()->type != 'teamadmin')
+                @if (false)<!--(Reg::currentConferenceID() != 0 && is_object(Reg::current()) && Reg::current()->type != 'teamadmin')-->
                   @foreach(Auth::user()->regs->where('conference_id', Reg::currentConferenceID())->where('enabled', true) as $reg)
                   @if ($reg->type == 'teamadmin')
                   <li class="@yield('interview_active')">

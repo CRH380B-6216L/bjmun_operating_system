@@ -2,7 +2,7 @@ $(document).ready(function() {
    $('#team-table').DataTable({
         processing: true,
         //serverSide: true,
-        ajax: 'ajax/teams',
+        ajax: '/ajax/schoollist',
         columns: [
             {data: 'details', name: 'details', orderable: false},
             {data: 'id', name: 'id', orderable: true},

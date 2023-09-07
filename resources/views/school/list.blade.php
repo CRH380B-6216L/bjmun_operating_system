@@ -16,8 +16,8 @@
               <div class="row m-t-sm">
                 <div class="col-sm-6 m-b-xs">
                   <!--a href="#subNav" data-toggle="class:hide" class="btn btn-sm btn-info"><i class="fa fa-caret-right text fa fa-large"></i><i class="fa fa-caret-left text-active fa fa-large"></i></a-->
-                  <a href="{{mp_url('/teams/new.modal')}}" class="btn btn-sm btn-success" data-toggle="ajaxModal"><i class="fa fa-plus"></i> 新建新团队</a>
-                  <a href="{{mp_url('/teams/join.modal')}}" class="btn btn-sm btn-success" data-toggle="ajaxModal"><i class="fa fa-plus"></i> 加入新团队</a>
+                  <a href="{{mp_url('/schools/new.modal')}}" class="btn btn-sm btn-success" data-toggle="ajaxModal"><i class="fa fa-plus"></i> 新建新团队</a>
+                  <a href="{{mp_url('/schools/join.modal')}}" class="btn btn-sm btn-success" data-toggle="ajaxModal"><i class="fa fa-plus"></i> 加入新团队</a>
                 </div>
                 <div class="col-sm-6 m-b-xs">
                   <div class="input-group">
@@ -30,7 +30,6 @@
               </div>
             </header>
             <section class="scrollable wrapper w-f">
-            {{--<div class="alert alert-info">十分抱歉由于一些问题，在6月5日13:20前注册的团队系统并未成功添加默认全局管理身份，而提示错误信息，目前问题已得到解决。先前注册的团队的默认全局管理身份已全部得以添加，因此问题而重复注册的团队已被删除，感谢您的理解与支持。</div>--}}
               <section class="panel">
                 <div class="table-responsive">
                   <table class="table table-striped m-b-none" id="team-table">
