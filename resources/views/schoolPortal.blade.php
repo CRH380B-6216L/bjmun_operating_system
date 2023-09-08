@@ -73,7 +73,7 @@ if (is_object($user))
           </span>
           <span class="h5"><strong><a href="/school/{{$school->id}}">{{$school->name}}</a></strong></span><br>
           <small class="text-muted">{{$school->typeText()}}模拟联合国社团<br>
-          您的身份: 社长</small>
+          您的身份: {{$school->pivot->title}}</small>
         </p>
         @endforeach
       <p><a href="#">查看我曾经加入的社团</a></p>

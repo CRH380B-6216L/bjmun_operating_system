@@ -39,8 +39,7 @@ Route::group(['domain' => config('munpanel.portalDomain')], function () {
 
     Route::get('/home', 'PortalController@index')->name('portal');
     Route::get('/schools/new.modal', 'PortalController@newTeamModal');
-    Route::get('/schools/join.modal', 'PortalController@joinTeamModal');
-    Route::get('/schools/joinWithCode.modal', 'PortalController@joinTeamWithCodeModal');
+    Route::get('/schools/join.modal/{id?}', 'SchoolController@joinTeamModal')->middleware('auth');
     Route::get('/school/{id}', 'SchoolController@schoolIndex');
     Route::get('/school/{id}/details.modal', 'PortalController@detailsModal');
     Route::post('/school/{id}/doUpdate', 'PortalController@updateTeam')->middleware('auth');
@@ -57,7 +56,6 @@ Route::group(['domain' => config('munpanel.portalDomain')], function () {
     Route::post('/schools/doAddAdmin', 'PortalController@addAdmin')->middleware('auth');
     Route::post('/schools/doDelAdmin', 'PortalController@delAdmin')->middleware('auth');
     Route::post('/schools/doJoinSchool', 'SchoolController@joinTeam')->name('doJoinTeam')->middleware('auth');
-    Route::post('/schools/doJoinSchoolWithCode', 'SchoolController@joinTeamWithCode')->name('doJoinTeamWithCode')->middleware('auth');
     Route::get('/ajax/schoollist', 'SchoolController@teamsTable');
 
     // Authentication Routes...

@@ -1,13 +1,13 @@
 ﻿<div class="modal-dialog">
- <div class="modal-content">
-   <header class="header bg-info bg-gradient mp-modal-header">
+  <div class="modal-content">
+    <header class="header bg-info bg-gradient mp-modal-header">
       <center><h4>新建学校社团</h4></center>
-   </header>
-   <div class="modal-body">
-     <div class="row">
-       <div class="col-sm-12 b-r">
-        <form id="newForm" class="form-horizontal" data-validate="parsley" action="{{mp_url('/schools/doCreateSchool')}}" method="post">
-          {{csrf_field()}}
+    </header>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-sm-12 b-r">
+          <form id="newForm" class="form-horizontal" data-validate="parsley" action="{{mp_url('/schools/doCreateSchool')}}" method="post">
+            {{csrf_field()}}
             <h4>学校信息</h4>
             <div class="form-group">
               <label class="col-sm-2 control-label">学校名称</label>
@@ -63,7 +63,7 @@
               <div class="col-sm-4">
                 <input type="text" name="class" class="form-control" placeholder="可选">
               </div>
-              <label class="col-sm-2 control-label">称谓</label>
+              <label class="col-sm-2 control-label">身份</label>
               <div class="col-sm-4">
                 <input type="text" name="title" class="form-control" value="社长">
               </div>
@@ -72,9 +72,9 @@
               <a onclick="$('#ajaxModal').modal('hide');$('#ajaxModal').remove();" class="btn btn-sm btn-danger text-uc m-t-n-xs pull-right"><i class="fa fa-times"></i> 取消</a>
               <a onclick="if ($('#newForm').parsley('validate')){loader(this); $('#newForm').submit();}" class="btn btn-sm btn-success text-uc m-t-n-xs m-r-xs pull-right"><i class="fa fa-check"></i> 确定</a>
             </p>
-         </form>
-       </div>
-     </div>
-   </div>
- </div><!-- /.modal-content -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div><!-- /.modal-content -->
 </div>

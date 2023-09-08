@@ -5,12 +5,12 @@ if (is_object($user)) $isJoined = $school->users->contains($user) ? true : false
 @extends('layouts.app')
 @section('teams_active', 'active')
 @push('scripts')
-    <script src="{{cdn_url('js/charts/easypiechart/jquery.easy-pie-chart.js')}}"></script>
-    <script src="{{cdn_url('/js/fuelux/fuelux.js')}}"></script>
-    <script src="{{cdn_url('/js/datepicker/bootstrap-datepicker.js')}}"></script>
+<script src="{{cdn_url('js/charts/easypiechart/jquery.easy-pie-chart.js')}}"></script>
+<script src="{{cdn_url('/js/fuelux/fuelux.js')}}"></script>
+<script src="{{cdn_url('/js/datepicker/bootstrap-datepicker.js')}}"></script>
 @endpush
 @push('css')
-    <link href="{{cdn_url('/js/fuelux/fuelux.css')}}" rel="stylesheet">
+<link href="{{cdn_url('/js/fuelux/fuelux.css')}}" rel="stylesheet">
 @endpush
 @section('content')
 <section class="scrollable bg-light">
@@ -61,7 +61,7 @@ if (is_object($user)) $isJoined = $school->users->contains($user) ? true : false
         @else
         <p>您还没有加入该社团。</p> 
         <p><a href="/schools/list">加入社团</a></p>
-        <p><a href="/schools/join.modal" data-toggle="ajaxModal" >使用团队加入码</a></p>
+        <p><a href="/schools/join.modal/{{$school->id}}" data-toggle="ajaxModal" >使用团队加入码</a></p>
         @endif
       @else
       <p><strong><a href="/login">登录</a></strong>以加入社团和执行其他操作。</p>  

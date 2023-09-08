@@ -43,7 +43,7 @@ class User extends Authenticatable
     }
 
     public function schools() {
-        return $this->belongsToMany('App\School');
+        return $this->belongsToMany('App\School')->withPivot('title');
     }
 
     public function sendVerificationEmail() {

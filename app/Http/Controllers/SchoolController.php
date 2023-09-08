@@ -60,11 +60,20 @@ class SchoolController extends Controller
 
     public function newTeamModal()
     {
+        if (!Auth::check())
+            return redirect('/login');
         return view('portal.newTeam');
     }
 
-    public function joinTeamModal()
+    public function joinTeamModal($id = 0)
     {
+        if (!Auth::check())
+            return redirect('/login');
+        if ($id != 0)
+        {
+            $school = School::findOrFail($id);
+            return view('portal.joinTeam', ['school' => $school]);
+        }
         return view('portal.joinTeam');
     }
 
@@ -112,39 +121,40 @@ class SchoolController extends Controller
 
     public function joinTeam(Request $request)
     {
-        
-    }
-
-    public function joinTeamWithCode(Request $request)
-    {
         $code = $request->code;
-        $team = School::where('joinCode', $code)->first();
-        if (!is_object($team))
-            return view('error', ['msg' => 'Wrong Code... Please double-check it.']);
-        if (isset($request->reg_id))
+        $school = null;
+        $status = 'pending';
+        $title = $request->title;
+        if ($code != '')
         {
-            $reg = Reg::find($request->reg_id);
-            if ($reg->user_id == Auth::id() && is_null($reg->school_id) && $team->option('groupreg_enabled', Reg::currentConferenceID()))
+            $school = School::where('joinCode', $code)->first();
+            if (!is_object($school))
+                return view('error', ['msg' => 'Wrong Code... Please double-check it.']);
+            else 
             {
-                $reg->school_id = $team->id;
-                $reg->save();
-                $specific = $reg->specific();
-                if (is_object($specific)) {
-                    $specific->school_id = $team->id;
-                    if ($specific->status == 'sVerified')
-                        $specific->status = 'reg';
-                    $specific->save();
-                }
-            } else
-                return view('error', ['msg' => 'Code valid. However, your team has not allowed group registration in this conference yet. Please ask your team admins to enable it. You haven\'t joined this team. If you do want to join, join using portal.']);
+                $status = 'active';
+                $title = '社团成员';
+            }
         }
+        elseif (isset($request->schoolid))
+            $school = School::find($request->schoolid);
+        else
+            $school = School::where('name', $request->schoolname)->first();
+        if (!is_object($school))
+            return view('error', ['msg' => 'The school you are willing to join does not exist!']);
         if (DB::table('school_user')
             ->whereUserId(Auth::id())
-            ->whereSchoolId($team->id)
+            ->whereSchoolId($school->id)
             ->count() > 0)
             return view('error', ['msg' => 'Already Member!']);
-        $team->users()->attach([Auth::id() => ['status' => 'active']]);
-        return back(); 
+        $school->users()->attach([Auth::id() => [
+            'status' => $status,
+            'title' => $title,
+            'grade' => $request->grade,
+            'gradeYear' => $request->gradeyear,
+            'class' => $request->class
+        ]]);
+        return view('school.index', ['school' => $school]);
     }
 
     /**
