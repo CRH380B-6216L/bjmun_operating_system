@@ -41,6 +41,32 @@ class School extends Model
         return $this->belongsToMany('App\User')
         ->withTimestamps()
         ->withPivot(['status', 'title', 'grade', 'gradeYear', 'class'])
+        ->orderByPivot('grade', 'ASC')
+        ->orderByPivot('gradeYear', 'DESC')
+        ->orderByPivot('class', 'ASC');
+    }
+
+    public function managers() {
+        return $this->belongsToMany('App\User')
+        ->withTimestamps()
+        ->withPivot(['status', 'title', 'grade', 'gradeYear', 'class'])
+        ->wherePivot('status', 'master')
+        ->orWherePivot('status', 'officer')
+        ->orderByPivot('status', 'ASC')
+        ->orderByPivot('title', 'ASC')
+        ->orderByPivot('grade', 'DESC')
+        ->orderByPivot('gradeYear', 'ASC')
+        ->orderByPivot('class', 'ASC');
+    }
+
+    public function members() {
+        return $this->belongsToMany('App\User')
+        ->withTimestamps()
+        ->withPivot(['status', 'title', 'grade', 'gradeYear', 'class'])
+        ->wherePivot('status', 'active')
+        ->orWherePivot('status', 'pending')
+        ->orderByPivot('grade', 'ASC')
+        ->orderByPivot('gradeYear', 'DESC')
         ->orderByPivot('class', 'ASC');
     }
 

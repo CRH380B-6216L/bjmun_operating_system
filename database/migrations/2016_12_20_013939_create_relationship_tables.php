@@ -129,7 +129,7 @@ class CreateRelationshipTables extends Migration
                 ->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('school_id')->references('id')->on('schools')
                 ->onUpdate('cascade')->onDelete('cascade');
-            $table->enum('status', ['pending', 'active', 'master', 'delisted', 'retire'])->default('pending');
+            $table->enum('status', ['pending', 'active', 'master', 'officer', 'delisted', 'retire'])->default('pending');
             $table->string('title')->default("社团成员");
             $table->enum('grade', ['middle', 'high', 'university'])->default('high');
             $table->integer('gradeYear')->unsigned();

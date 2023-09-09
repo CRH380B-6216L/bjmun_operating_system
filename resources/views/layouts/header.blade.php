@@ -4,7 +4,7 @@
     <li class="dropdown">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
         <i class="fa fa-university text-white"></i>
-        <span class="text-white">岐阜县立斐太高等学校</span> <b class="caret"></b>
+        <span class="text-white">{{Auth::user()->schools->first()->name}}</span> <b class="caret"></b>
       </a>
       <ul class="dropdown-menu">
         <li>
@@ -22,7 +22,7 @@
     <li class="dropdown">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
         <i class="fa fa-gavel text-white"></i>
-        <span class="text-white">BJMUNC 2022</span> <b class="caret"></b>
+        <span class="text-white">BJMUNC 2024</span> <b class="caret"></b>
       </a>
       <ul class="dropdown-menu">
         <li>

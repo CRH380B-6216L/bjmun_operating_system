@@ -44,7 +44,9 @@ class User extends Authenticatable
     }
 
     public function schools() {
-        return $this->belongsToMany('App\School')->withPivot('title')->withTimestamps();
+        return $this->belongsToMany('App\School')
+        ->withPivot(['title', 'status'])
+        ->withTimestamps();
     }
 
     public function sendVerificationEmail() {
