@@ -1,9 +1,13 @@
 @php
 $user = Auth::user();
 if (is_object($user)) $isJoined = $school->users->contains($user) ? true : false;
+$members = $school->users;
 @endphp
 @extends('layouts.app')
 @section('teams_active', 'active')
+@push('title')
+<title>{{$school->name}} - BJMUN Operating System{{config('app.debug')?' - App:Debug':''}}</title>
+@endpush
 @push('scripts')
 <script src="{{cdn_url('js/charts/easypiechart/jquery.easy-pie-chart.js')}}"></script>
 <script src="{{cdn_url('/js/fuelux/fuelux.js')}}"></script>
@@ -30,9 +34,7 @@ if (is_object($user)) $isJoined = $school->users->contains($user) ? true : false
         <a href="#" class="m-r"><i class="fa fa-envelope fa-2x icon-muted v-middle"></i> 消息</a>
         <a href="#"><i class="fa fa-cog fa-2x icon-muted v-middle"></i> 管理</a>
       </div>
-      <h4>
-      社团活动动态
-      </h4>
+      <h4>社团活动动态</h4>
       <div class="post-item">
         <div class="caption wrapper-lg">
           <h2 class="post-title"><a href="#">笠松特雷森模联管理层换届通告</a></h2>
@@ -48,7 +50,17 @@ if (is_object($user)) $isJoined = $school->users->contains($user) ? true : false
           </div>
         </div>
       </div>
-      <p>You can use the .hbox and .vbox to build the complicated layouts.</p>  
+      <h4>社团成员</h4>
+      @foreach ($members as $member)
+      <p class="col-xs-6 col-sm-4 col-md-3">
+        <span class="pull-left thumb-sm avatar m-r-sm m-t-xs">
+          <img class="img-circle" src="/storage/avatar/{{$member->avatar}}">
+        </span>
+        <span class="h5"><a href=""><strong>{{$member->name}}</strong>{{$member->id == Auth::id() ? '（我）' : ''}}</a></span><br>
+          <small class="text-muted">{{$member->pivot->class}}<br>
+          {{$member->pivot->title}}</small>
+      </p>
+      @endforeach
     </div>           
     <div class="col-lg-3" style="padding-top: 15px">
       <h4>关于社团</h4>

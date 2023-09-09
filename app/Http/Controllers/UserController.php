@@ -37,6 +37,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Collection;
 
 class UserController extends Controller
@@ -1057,6 +1058,7 @@ class UserController extends Controller
      */
     public function test(Request $request)
     {
+        return Auth::user()->urlAvatar();
         return;
         $passwords = ["goldship", "vodka", "daiwascarlet", "taikishattle", "grasswonder", "hishiamazon", "mejiromcqueen", "elcondorpasa", "tmoperao", "naritabrian", "symbolirudolf", "airgroove", "agnesdigital", "seiunsky", "tamamocross", "finemotion", "biwahayahide", "mayanotopgun", "manhattancafe", "mihonobourbon", "mejiroryan", "hishiakebono", "yukinobijin", "riceshower", "inesfujin", "agnestachyon", "admirevega", "inarione", "winningticket", "airshakur", "eishinflash", "currenchan", "kawakamiprincess", "goldcity", "sakurabakushino", "seekingthepearl", "shinkowindy", "sweeptosho", "supercreek", "smartfalcon", "zennorobroy", "tosenjordan", "nakayamafesta", "naritataishin", "nishinoflower", "haruurara", "bamboomemory", "bikopegasus", "marveloussunday", "matikanefukukitaru", "mrcb", "meishodoto", "mejirodober", "nicenature", "kinghalo", "matikanetannhauser", "ikunodictus", "mejiropalmer", "daitakuhelios", "twinturbo", "satonodiamond", "kitasanblack", "sakurachiyonoo", "siriussymboli", "mejiroardan", "yaenomuteki", "tsurumarutsuyoshi", "mejirobright", "daringtact", "sakuralaurel", "naritatoproad", "yamaninzephyr", "symbolikriss", "taninogimlet", "daiichiruby", "mejiroramonu", "astonmachan", "satonocrown", "chevalgrand", "ksmiracle", "junglepocket", "copanorickey", "hokkotarumae", "wonderacute", "soundsofearth", "katsuragiace", "neouniverse", "hishimiracle", "tapdancecity", "happymeek", "bittergrasse", "littlecocon", "montjeu", "venuspark", "ligantona", "hayakawa.tazuna", "akikawa.yayoyi", "otonashi.etsuko", "kiryouin.aoi", "anshinzawa.sasami", "kashimoto.riko", "lighthello", "darleyarabian", "godolphinbarb", "byerleyturk", "satakemei"];
         foreach($passwords as $i)

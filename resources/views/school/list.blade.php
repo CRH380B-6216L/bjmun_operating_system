@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('teams_active', 'active')
+@push('title')
+<title>社团与团队 - BJMUN Operating System{{config('app.debug')?' - App:Debug':''}}</title>
+@endpush
 @push('scripts')
     <script src="{{cdn_url('/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{cdn_url('/js/datatables/fnReloadAjax.js')}}"></script>

@@ -10,8 +10,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>BJMUN Operating System{{config('app.debug')?' - App:Debug':''}}</title>
+    @stack('title')
     <meta name="keywords" content="BJMUN,MUN,Model UN,Model United Nations,United Nations,UN,PANEL,模联,模拟联合国">
     <meta name="copyright" content="Proudly Powered and Copyrighted by {{config('bjmun.copyright_year')}} BJMUN.">
     <meta name="generator" content="BJMUN Operating System">

@@ -10,6 +10,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Storage;
 use PragmaRX\Google2FA\Contracts\Google2FA;
 
 class User extends Authenticatable
@@ -128,4 +129,11 @@ class User extends Authenticatable
         return $result;
     }
 
+    public function urlAvatar() {
+        if (is_null($this->avatar))
+            return '/images/avatar.jpg';
+        //if ($this->avatar == 'gravatar')
+        //    return;
+        return Storage::disk('pubilc')->url($this->avatar);
+    }
 }

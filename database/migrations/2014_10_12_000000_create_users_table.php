@@ -31,6 +31,7 @@ class CreateUsersTable extends Migration
             $table->string('tel')->nullable();
             //$table->enum('type', ['unregistered', 'ot', 'dais', 'school', 'delegate', 'observer', 'volunteer']);
             $table->string('password');
+            $table->string('avatar')->nullable();
             $table->string('emailVerificationToken');
             //$table->integer('telVerifications')->default(15); //暂不使用，待资料和人员确定后再开
             //$table->string('google2fa_secret')->nullable();

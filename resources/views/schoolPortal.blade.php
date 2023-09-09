@@ -9,6 +9,9 @@ if (is_object($user))
 @endphp
 @extends('layouts.app')
 @section('teams_active', 'active')
+@push('title')
+<title>社团与团队 - BJMUN Operating System{{config('app.debug')?' - App:Debug':''}}</title>
+@endpush
 @push('scripts')
     <script src="{{cdn_url('js/charts/easypiechart/jquery.easy-pie-chart.js')}}"></script>
     <script src="{{cdn_url('/js/fuelux/fuelux.js')}}"></script>

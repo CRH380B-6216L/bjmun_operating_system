@@ -38,7 +38,10 @@ class School extends Model
     }
 
     public function users() {
-        return $this->belongsToMany('App\User')->withTimestamps();
+        return $this->belongsToMany('App\User')
+        ->withTimestamps()
+        ->withPivot(['status', 'title', 'grade', 'gradeYear', 'class'])
+        ->orderByPivot('class', 'ASC');
     }
 
     public function options()

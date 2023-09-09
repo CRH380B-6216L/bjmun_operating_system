@@ -88,7 +88,7 @@
     <li class="dropdown">
       <a href="#" class="dropdown-toggle dker" data-toggle="dropdown">
         <span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
-          <img src="images/avatar.jpg">
+          <img src="/storage/avatar/{{Auth::user()->avatar}}">
         </span>
         <span>{{Auth::user()->name}}</span>
         <b class="caret"></b>

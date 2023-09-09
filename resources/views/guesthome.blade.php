@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('home_active', 'active')
+@push('title')
+<title>BJMUN Operating System{{config('app.debug')?' - App:Debug':''}}</title>
+@endpush
 @push('scripts')
     <script src="{{cdn_url('js/charts/easypiechart/jquery.easy-pie-chart.js')}}"></script>
     <script src="{{cdn_url('/js/fuelux/fuelux.js')}}"></script>
